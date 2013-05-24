@@ -194,7 +194,7 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
       <li>native
         <ul>
           <li><strong>class</strong> - (String) YoutubeVideo, BrightcoveVideo, VimeoVideo</li>
-          <li><strong>videoid</strong> - (String) The native video ID.
+          <li><strong>id</strong> - (String) The native video ID.
         </ul>
       </li>
     </ul>

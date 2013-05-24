@@ -188,9 +188,15 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
   <tr><td><strong>owner</strong></td><td>(String) Asset owner</td></tr>
   <tr><td><strong>thumbnail, small,<br />large, full</strong></td><td>(Object) Asset sizes:
     <ul>
-      <li>URL</li>
-      <li>Width</li>
-      <li>Height</li>
+      <li><strong>url</strong></li>
+      <li><strong>width</strong></li>
+      <li><strong>height</strong></li>
+      <li>native
+        <ul>
+          <li><strong>class</strong> - (String) YoutubeVideo, BrightcoveVideo, VimeoVideo</li>
+          <li><strong>videoid</strong> - (String) The native video ID.
+        </ul>
+      </li>
     </ul>
   </td></tr>
 </table>

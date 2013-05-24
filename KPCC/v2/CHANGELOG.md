@@ -1,6 +1,6 @@
 ### 2.3.1 (2013-05-22)
 * Videos have been deprecated. You can request them but you'll just get a list of all content. **This is a breaking change**, but I'm not incrementing the major version because it will still be broken in v2.
-
+* Added Native type to asset objects.
 
 ### 2.2.1 (2013-05-21)
 * Added URL to Audio objects.

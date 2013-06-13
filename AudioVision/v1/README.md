@@ -10,7 +10,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 1.4.0  
+**Current Version**: 1.5.0  
 **Endpoint**: /api/v1/  
 **Response**: JSON only
 
@@ -18,7 +18,6 @@
 
 ## Posts ##
 **Endpoint**: /api/v1/posts/
-
 
 ### Objects ###
 
@@ -62,8 +61,13 @@ This is how every post is represented by the API in its response.
   </tr>
 
   <tr>
-    <td><strong>permalink</strong></td>
+    <td><strong>public_url</strong></td>
     <td>(String) The full, canonical URL.</td>
+  </tr>
+
+  <tr>
+    <td><strong>permalink</strong></td>
+    <td><strong>DEPRECATED</strong>: Use <em>public_url</em>.</td>
   </tr>
 
   <tr>
@@ -93,7 +97,6 @@ This is how every post is represented by the API in its response.
   </tr>
 </table>
 
-
 #### Category Object Description ####
 
 <table>
@@ -118,11 +121,15 @@ This is how every post is represented by the API in its response.
   </tr>
 
   <tr>
-    <td><strong>url</strong></td>
+    <td><strong>public_url</strong></td>
     <td>(String) The canonical URL for this category.</td>
   </tr>
-</table>
 
+  <tr>
+    <td><strong>permalink</strong></td>
+    <td><strong>DEPRECATED</strong>: Use <em>public_url</em>.</td>
+  </tr>
+</table>
 
 #### Attribution Object Description ####
 
@@ -147,7 +154,6 @@ This is how every post is represented by the API in its response.
     <td>(Integer) The numeric ID for this attribution's role.</td>
   </tr>
 </table>
-
 
 #### Asset Object Description ####
 There are four sizes of assets. These are their names and geometry (see [ImageMagick geometry](http://www.imagemagick.org/script/command-line-processing.php#geometry) for explanation). Note that `#` means "cropped".
@@ -176,7 +182,6 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
   </td></tr>
 </table>
 
-
 ### Endpoints ###
 
 #### Post by URL ####
@@ -191,7 +196,6 @@ GET /api/v1/posts/by_url?url=http://audiovision.scpr.org/127/moon-rise-los-angel
 **Returns**
 A single JSON object representation of the requested post.
 
-
 #### Post by ID (obj_key) ####
 Find a post by its obj_key (posts:999)
 
@@ -203,7 +207,6 @@ Find a post by its obj_key (posts:999)
 GET /api/v1/posts/posts:999  
 **Returns**
 A single JSON object representation of the requested post.
-
 
 #### Posts Collection ####
 Find a collection of posts based on several parameters.
@@ -226,12 +229,10 @@ A JSON array of post objects, ordered by **descending published_at date**.
 
 
 
-
 ## Buckets ##
 Buckets are collections of posts.
 
 **Endpoint**: /api/v1/buckets/
-
 
 ### Objects ###
 
@@ -264,7 +265,6 @@ Buckets are collections of posts.
   </tr>
 </table>
 
-
 ### Endpoints ###
 
 #### Bucket by ID (key) ####
@@ -278,7 +278,6 @@ Find a bucket by its key (text ID)
 GET /api/v1/buckets/featured  
 **Returns**
 A single JSON object representation of the requested bucket, **including its posts**.
-
 
 #### Buckets Collection ####
 Finds all buckets.
@@ -296,7 +295,6 @@ A JSON Array of all buckets, **excluding posts**.
 ## Billboards ##
 Featured collections of posts on the homepage of AudioVision.
 **Endpoint**: /api/v1/billboards/
-
 
 ### Objects ###
 
@@ -329,7 +327,6 @@ Featured collections of posts on the homepage of AudioVision.
   </tr>
 </table>
 
-
 ### Endpoints ###
 
 #### Billboard by ID ####
@@ -355,7 +352,6 @@ Find the billboard currently featured on AudioVision's homepage.
 GET /api/v1/billboards/current  
 **Returns**
 A single JSON object representation of the requested billboard, **including its posts**.
-
 
 #### Billboard Collection ####
 Finds all published billboards.

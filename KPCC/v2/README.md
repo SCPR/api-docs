@@ -373,6 +373,20 @@ Representation of an Abstract in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>assets</strong></td>
+    <td>
+      (Array) The abstracts's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>audio</strong></td>
+    <td>
+      (Array) This abstracts's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
     <td>category</td>
     <td>
       (Object) The category locally assigned to this article. See <a href="#category-object-description">Category Object Description</a> for the object description.

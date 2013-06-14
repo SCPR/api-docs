@@ -17,7 +17,7 @@
 
 
 ### 2.3.1 (2013-05-22)
-Ï**
+##### Additions
 * Added Native type to asset objects.
 
 ##### Deprecations

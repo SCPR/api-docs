@@ -10,14 +10,14 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.3.1  
-**Endpoint**: /api/v2/  
+**Current Version**: 2.4.0  
+**Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
 
-## Content ##
-**Endpoint**: /api/v2/content/
 
+## Articles ##
+**Endpoint**: `/api/v2/articles/`
 
 #### Supported Classes ###
 Note that NewsStory and ContentShell are lumped together.
@@ -50,7 +50,6 @@ Note that NewsStory and ContentShell are lumped together.
   </tr>
 </table>
 
-
 ### Objects ###
 
 #### Content Object Description ####
@@ -79,7 +78,7 @@ This is how every article is represented by the API in its response.
 
   <tr>
     <td><strong>published_at</strong></td>
-    <td>(DateTime) The original publish date of the content.</td>
+    <td>(DateTime) The original publish date of the article.</td>
   </tr>
 
   <tr>
@@ -93,8 +92,13 @@ This is how every article is represented by the API in its response.
   </tr>
 
   <tr>
-    <td><strong>permalink</strong></td>
+    <td><strong>public_url</strong></td>
     <td>(String) The full, canonical URL.</td>
+  </tr>
+
+  <tr>
+    <td><strong>permalink</strong></td>
+    <td><strong>DEPRECATED</strong>: Use <em>public_url</em>.</td>
   </tr>
 
   <tr>
@@ -117,42 +121,19 @@ This is how every article is represented by the API in its response.
   </tr>
 
   <tr>
-    <td>audio</td>
+    <td><strong>audio</strong></td>
     <td>
-      (Array) This article's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description. <br />
-      <strong>Note:</strong> This attribute will be empty if the object MAY have attributions, but has none. It will be absent if the article MAY NOT have attributions (eg. ContentShells).
+      (Array) This article's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
     </td>
   </tr>
 
   <tr>
-    <td>attributions</td>
+    <td><strong>attributions</strong></td>
     <td>
-      (Array) Attributions (i.e., Bylines). See <a href="#attribution-object-description">Attribution Object Description</a> for the object description. <br />
-      <strong>Note:</strong> This attribute will be empty (empty array) if the object MAY have attributions, but has none. It will be <em>absent</em> if the article MAY NOT have attributions (eg. ShowEpisodes).
+      (Array) Attributions (i.e., Bylines). See <a href="#attribution-object-description">Attribution Object Description</a> for the object description.
     </td>
   </tr>
 </table>
-
-
-#### Category Object Description ####
-
-<table>
-  <tr>
-    <td><strong>id</strong></td>
-    <td>(Integer) The numerical ID for this category.</td>
-  </tr>
-
-  <tr>
-    <td><strong>title</strong></td>
-    <td>(String) The category title.</td>
-  </tr>
-
-  <tr>
-    <td><strong>url</strong></td>
-    <td>(String) The canonical URL for this category.</td>
-  </tr>
-</table>
-
 
 #### Attribution Object Description ####
 
@@ -172,7 +153,6 @@ This is how every article is represented by the API in its response.
     <td>(Integer) The numeric ID for this attribution's role.</td>
   </tr>
 </table>
-
 
 #### Asset Object Description ####
 There are four sizes of assets. These are their names and geometry (see [ImageMagick geometry](http://www.imagemagick.org/script/command-line-processing.php#geometry) for explanation). Note that `#` means "cropped".
@@ -201,81 +181,235 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
   </td></tr>
 </table>
 
-
 ### Endpoints ###
 
 #### Article by URL ####
 Find an article by its URL.
 
-**Endpoint**: /api/v2/content/by_url?url={url} (GET)  
-**Params**:
-* `url` - (String) The full URL of the content.
+**Endpoint** `/api/v2/articles/by_url?url={url}` (GET)  
+**Params**  
+* `url` - (String) The full URL of the article.
 
-**Example**
-GET /api/v2/content/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/dearmayor-live-from-westchester-what-should-la-s-n/  
-**Returns**
-A single JSON object representation of the requested content.
-
+**Example**  
+GET `/api/v2/articles/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/obama-and-stuff/`  
+**Returns** A single JSON object representation of the requested article.
 
 #### Article by ID (obj_key) ####
-Find an article by its obj_key (blogs/entry:999)
+Find an article by its obj_key (`blogs/entry:999`)
 
-**Endpoint**: /api/v2/content/{obj_key} (GET)  
-**Params**: 
+**Endpoint** `/api/v2/articles/{obj_key}` (GET)  
+**Params**:  
 * `obj_key` - (String) The object key (API id) for the article.
 
-**Example**
-GET /api/v2/content/blogs/entry:999  
-**Returns**
-A single JSON object representation of the requested content.
+**Example** GET `/api/v2/articles/blogs/entry:999`  
+**Returns** A single JSON object representation of the requested article.
 
-
-#### Content Collection ####
+#### Articles Collection ####
 Find a collection of articles based on several parameters.
 
-**Endpoint**: /api/v2/content?{optional params} (GET)  
+**Endpoint**: `/api/v2/articles?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `query` - (String) A search query.  
-Example: ?query=Obama+Healthcare
+  Example: `?query=Obama+Healthcare`
 * `types` - (comma-separated list) The types of articles to return.  
-Example: ?types=news,blogs,segments  
-See the "Supported Classes" table for the options. (default: all types)
+  Example: `?types=news,blogs,segments`  
+  See the [Supported Classes](#supported-classes) table for the options. (default: all types)
+* `categories` - (comma-separated list) The slugs of the categories
+  by which you want to filter.  
+  Example: `?categories=film,music`  
+  See [Categories](#categories) for how to find category slugs.
 * `limit` - (Integer) The number of articles to return.  
-Maximum is 40. (default: 10)
+  Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example**
-GET /api/v2/content?query=Obama&types=news,blogs,segments&limit=25&page=4  
-**Returns**
-A JSON array of article objects, ordered by **descending published_at date**.
-
+**Example**  
+GET `/api/v2/articles?query=Obama&types=news,blogs,segments&limit=25&page=4`  
+**Returns** A JSON array of article objects, ordered by **descending published_at date**.
 
 #### Most Viewed ####
-Grab the most viewed content.
+Grab the most viewed articles.
 
-**Endpoint**: /api/v2/content/most_viewed (GET)  
+**Endpoint**: `/api/v2/articles/most_viewed` (GET)  
 **Params**: None  
-**Example**
-GET /api/v2/content/most_viewed  
-**Returns**
-A JSON array of article objects.
-
+**Example** GET `/api/v2/articles/most_viewed`  
+**Returns** A JSON array of article objects.
 
 #### Most Commented ####
-Grab the most commented content.
+Grab the most commented articles.
 
-**Endpoint**: /api/v2/content/most_commented (GET)  
+**Endpoint**: `/api/v2/articles/most_commented` (GET)  
 **Params**: None  
-**Example**
-GET /api/v2/content/most_commented  
-**Returns**
-A JSON array of article objects.
+**Example** GET `/api/v2/articles/most_commented`  
+**Returns** A JSON array of article objects.
+
+
+
+## Categories ##
+**Endpoint**: `/api/v2/categories/`
+
+### Objects ###
+
+#### Category Object Description ####
+Representation of a Category in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>id</strong></td>
+    <td>(Integer) The numerical ID for this category.</td>
+  </tr>
+
+  <tr>
+    <td><strong>slug</strong></td>
+    <td>(String) The URL slug (also acting UUID) for this category.</td>
+  </tr>
+
+  <tr>
+    <td><strong>title</strong></td>
+    <td>(String) The category title.</td>
+  </tr>
+
+  <tr>
+    <td><strong>url</strong></td>
+    <td>(String) The canonical URL for this category.</td>
+  </tr>
+</table>
+
+### Endpoints ###
+
+#### Category by Slug (uuid) ####
+Find a category by its slug (uuid).
+
+**Endpoint**: `/api/v2/categories/{slug}` (GET)  
+**Params**: 
+* `slug` - (String) The slug (uuid) for the category.
+
+**Example** GET `/api/v2/categories/film`  
+**Returns** A single JSON object representation of the requested category.
+
+#### Category Collection ####
+Get all categories.
+
+**Endpoint**: `/api/v2/categories` (GET)  
+**Params**: None  
+**Example** GET `/api/v2/categories`  
+**Returns** A JSON array of all categories.
+
+
+
+## Editions ##
+**Endpoint**: `/api/v2/editions/`
+
+### Objects ###
+
+#### Edition Object Description ####
+Representation of an Edition in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>id</strong></td>
+    <td>(Integer) The ID of this edition.</td>
+  </tr>
+
+  <tr>
+    <td><strong>published_at</strong></td>
+    <td>(DateTime) The date/time on which this Edition was published.</td>
+  </tr>
+
+  <tr>
+    <td><strong>abstracts</strong></td>
+    <td>
+      (Array) An array of this Edition's Abstracts. See <a href="#abstract-object-description">Abstract Object Description</a> for the object description.
+    </td>
+  </tr>
+</table>
+
+#### Abstract Object Description ####
+Representation of an Abstract in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>source</strong></td>
+    <td>(String) The human-readble source for this abstract (eg, "NPR").</td>
+  </tr>
+
+  <tr>
+    <td><strong>url</strong></td>
+    <td>(String) The URL to the full article.</td>
+  </tr>
+
+  <tr>
+    <td><strong>headline</strong></td>
+    <td>
+      (String) The local headline for this abstract.<br />
+      This is not necessarily the headline of the actual article.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>summary</strong></td>
+    <td>(Text) A summary of the article. May contain HTML.</td>
+  </tr>
+
+  <tr>
+    <td><strong>article_published_at</strong></td>
+    <td>
+      (DateTime) The original publish date of the full article at the
+      remote source.<br />
+      <strong>Note</strong>: This property may be null.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>assets</strong></td>
+    <td>
+      (Array) The abstracts's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>audio</strong></td>
+    <td>
+      (Array) This abstracts's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
+    <td>category</td>
+    <td>
+      (Object) The category locally assigned to this article. See <a href="#category-object-description">Category Object Description</a> for the object description.
+    </td>
+  </tr>
+
+</table>
+
+### Endpoints ###
+
+#### Edition by ID ####
+Find an edition by its ID.
+
+**Endpoint**: `/api/v2/editions/{id}` (GET)  
+**Params**: 
+* `id` - (Integer) The ID for the edition.
+
+**Example** GET `/api/v2/editions/999`  
+**Returns** A single JSON object representation of the requested edition.
+
+#### Editions Collection ####
+Find a collection of editions, based on several parameters.
+
+**Endpoint**: `/api/v2/editions?{optional params}` (GET)  
+**Params**: (All parameters are optional)
+* `limit` - (Integer) The number of editions to return.  
+  Maximum is 4. (default: 2)
+* `page` - (Integer) The page of results to return. (default: 1)
+
+**Example** GET `/api/v2/editions?limit=1&page=1`  
+**Returns** A JSON array of edition objects, ordered by **descending published_at date**.
 
 
 
 ## Audio ##
-**Endpoint**: /api/v2/audio/
-
+**Endpoint**: `/api/v2/audio/`
 
 ### Objects ###
 
@@ -324,40 +458,40 @@ Representation of Audio in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>article_obj_key</strong></td>
+    <td>(String) The obj_key (UUID) for this audio's associated article. You can make a separate request to the <a href="#articles">Article API</a> to fetch the object.</td>
+  </tr>
+
+  <tr>
     <td><strong>content_obj_key</strong></td>
-    <td>(String) The obj_key (UUID) for this audio's content object. You can make a separate request to the <a href="#content">Content API</a> to fetch the object.</td>
+    <td><strong>DEPRECATED</strong>: Use <em>article_obj_key</em>.</td>
   </tr>
 </table>
-
 
 ### Endpoints ###
 
 #### Audio by ID ####
 Find audio by its ID.
 
-**Endpoint**: /api/v2/audio/{id} (GET)  
+**Endpoint**: `/api/v2/audio/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The ID for the audio.
 
-**Example**
-GET /api/v2/audio/999  
-**Returns**
-A single JSON object representation of the requested audio.
+**Example** GET `/api/v2/audio/999`  
+**Returns** A single JSON object representation of the requested audio.
 
 
 #### Audio Collection ####
 Find a collection of audio based on several parameters.
 
-**Endpoint**: /api/v2/audio?{optional params} (GET)  
+**Endpoint**: `/api/v2/audio?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of audio objects to return.  
-Maximum is 40. (default: 10)
+  Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example**
-GET /api/v2/audio?limit=25&page=4  
-**Returns**
-A JSON array of audio objects, ordered by **descending uploaded_at date**.
+**Example** GET `/api/v2/audio?limit=25&page=4`  
+**Returns** A JSON array of audio objects, ordered by **descending uploaded_at date**.
 
 
 
@@ -378,7 +512,7 @@ These are some errors you might come across when interacting with the API.
   <tr>
     <td>Bad Request</td>
     <td>400</td>
-    <td>Some parameter is malformed, such as an invalid URI in content#by_url</td>
+    <td>Some parameter is malformed, such as an invalid URI in articles#by_url</td>
   </tr>
   <tr>
     <td>Not Found</td>

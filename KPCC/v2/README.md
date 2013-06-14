@@ -403,7 +403,8 @@ Find a collection of editions, based on several parameters.
   Maximum is 4. (default: 2)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example** GET `/api/v2/editions?limit=1&page=1`  
+**Example**  
+GET `/api/v2/editions?limit=1` (this example will retrieve the most recent, i.e. "current", edition)  
 **Returns** A JSON array of edition objects, ordered by **descending published_at date**.
 
 

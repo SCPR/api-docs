@@ -1,4 +1,4 @@
-### 2.4.0 (2013-07-07)
+### 2.4.0 (2013-06-14)
 ##### Additions
 * Added Editions endpoint, for requesting Editions and their Abstracts.
 * Added Category filtering for Content.

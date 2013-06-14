@@ -11,13 +11,13 @@
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
 **Current Version**: 2.4.0  
-**Endpoint**: /api/v2/  
+**Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
 
 
 ## Articles ##
-**Endpoint**: /api/v2/articles/
+**Endpoint**: `/api/v2/articles/`
 
 #### Supported Classes ###
 Note that NewsStory and ContentShell are lumped together.
@@ -186,74 +186,66 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
 #### Article by URL ####
 Find an article by its URL.
 
-**Endpoint**: /api/v2/articles/by_url?url={url} (GET)  
-**Params**:
+**Endpoint** `/api/v2/articles/by_url?url={url}` (GET)  
+**Params**  
 * `url` - (String) The full URL of the article.
 
-**Example**
-GET /api/v2/articles/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/dearmayor-live-from-westchester-what-should-la-s-n/  
-**Returns**
-A single JSON object representation of the requested article.
+**Example**  
+GET `/api/v2/articles/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/obama-and-stuff/`  
+**Returns** A single JSON object representation of the requested article.
 
 #### Article by ID (obj_key) ####
-Find an article by its obj_key (blogs/entry:999)
+Find an article by its obj_key (`blogs/entry:999`)
 
-**Endpoint**: /api/v2/articles/{obj_key} (GET)  
-**Params**: 
+**Endpoint** `/api/v2/articles/{obj_key}` (GET)  
+**Params**:  
 * `obj_key` - (String) The object key (API id) for the article.
 
-**Example**
-GET /api/v2/articles/blogs/entry:999  
-**Returns**
-A single JSON object representation of the requested article.
+**Example** GET `/api/v2/articles/blogs/entry:999`  
+**Returns** A single JSON object representation of the requested article.
 
 #### Articles Collection ####
 Find a collection of articles based on several parameters.
 
-**Endpoint**: /api/v2/articles?{optional params} (GET)  
+**Endpoint**: `/api/v2/articles?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `query` - (String) A search query.  
-  Example: ?query=Obama+Healthcare
+  Example: `?query=Obama+Healthcare`
 * `types` - (comma-separated list) The types of articles to return.  
-  Example: ?types=news,blogs,segments  
-  See the "Supported Classes" table for the options. (default: all types)
+  Example: `?types=news,blogs,segments`  
+  See the [Supported Classes](#supported-classes) table for the options. (default: all types)
 * `categories` - (comma-separated list) The slugs of the categories
   by which you want to filter.  
-  Example: ?categories=film,music  
+  Example: `?categories=film,music`  
   See [Categories](#categories) for how to find category slugs.
 * `limit` - (Integer) The number of articles to return.  
   Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example**
-GET /api/v2/articles?query=Obama&types=news,blogs,segments&limit=25&page=4  
-**Returns**
-A JSON array of article objects, ordered by **descending published_at date**.
+**Example**  
+GET `/api/v2/articles?query=Obama&types=news,blogs,segments&limit=25&page=4`  
+**Returns** A JSON array of article objects, ordered by **descending published_at date**.
 
 #### Most Viewed ####
 Grab the most viewed articles.
 
-**Endpoint**: /api/v2/articles/most_viewed (GET)  
+**Endpoint**: `/api/v2/articles/most_viewed` (GET)  
 **Params**: None  
-**Example**
-GET /api/v2/articles/most_viewed  
-**Returns**
-A JSON array of article objects.
+**Example** GET `/api/v2/articles/most_viewed`  
+**Returns** A JSON array of article objects.
 
 #### Most Commented ####
 Grab the most commented articles.
 
-**Endpoint**: /api/v2/articles/most_commented (GET)  
+**Endpoint**: `/api/v2/articles/most_commented` (GET)  
 **Params**: None  
-**Example**
-GET /api/v2/articles/most_commented  
-**Returns**
-A JSON array of article objects.
+**Example** GET `/api/v2/articles/most_commented`  
+**Returns** A JSON array of article objects.
 
 
 
 ## Categories ##
-**Endpoint**: /api/v2/categories/
+**Endpoint**: `/api/v2/categories/`
 
 ### Objects ###
 
@@ -287,30 +279,25 @@ Representation of a Category in the JSON response.
 #### Category by Slug (uuid) ####
 Find a category by its slug (uuid).
 
-**Endpoint**: /api/v2/categories/{slug} (GET)  
+**Endpoint**: `/api/v2/categories/{slug}` (GET)  
 **Params**: 
 * `slug` - (String) The slug (uuid) for the category.
 
-**Example**
-GET /api/v2/categories/film  
-**Returns**
-A single JSON object representation of the requested category.
+**Example** GET `/api/v2/categories/film`  
+**Returns** A single JSON object representation of the requested category.
 
 #### Category Collection ####
 Get all categories.
 
-**Endpoint**: /api/v2/categories (GET)  
-**Params**: None
-
-**Example**
-GET /api/v2/categories  
-**Returns**
-A JSON array of all categories.
+**Endpoint**: `/api/v2/categories` (GET)  
+**Params**: None  
+**Example** GET `/api/v2/categories`  
+**Returns** A JSON array of all categories.
 
 
 
 ## Editions ##
-**Endpoint**: /api/v2/editions/
+**Endpoint**: `/api/v2/editions/`
 
 ### Objects ###
 
@@ -400,33 +387,29 @@ Representation of an Abstract in the JSON response.
 #### Edition by ID ####
 Find an edition by its ID.
 
-**Endpoint**: /api/v2/editions/{id} (GET)  
+**Endpoint**: `/api/v2/editions/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The ID for the edition.
 
-**Example**
-GET /api/v2/editions/999  
-**Returns**
-A single JSON object representation of the requested edition.
+**Example** GET `/api/v2/editions/999`  
+**Returns** A single JSON object representation of the requested edition.
 
 #### Editions Collection ####
 Find a collection of editions, based on several parameters.
 
-**Endpoint**: /api/v2/editions?{optional params} (GET)  
+**Endpoint**: `/api/v2/editions?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of editions to return.  
   Maximum is 4. (default: 2)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example**
-GET /api/v2/editions?limit=1&page=1  
-**Returns**
-A JSON array of edition objects, ordered by **descending published_at date**.
+**Example** GET `/api/v2/editions?limit=1&page=1`  
+**Returns** A JSON array of edition objects, ordered by **descending published_at date**.
 
 
 
 ## Audio ##
-**Endpoint**: /api/v2/audio/
+**Endpoint**: `/api/v2/audio/`
 
 ### Objects ###
 
@@ -490,29 +473,25 @@ Representation of Audio in the JSON response.
 #### Audio by ID ####
 Find audio by its ID.
 
-**Endpoint**: /api/v2/audio/{id} (GET)  
+**Endpoint**: `/api/v2/audio/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The ID for the audio.
 
-**Example**
-GET /api/v2/audio/999  
-**Returns**
-A single JSON object representation of the requested audio.
+**Example** GET `/api/v2/audio/999`  
+**Returns** A single JSON object representation of the requested audio.
 
 
 #### Audio Collection ####
 Find a collection of audio based on several parameters.
 
-**Endpoint**: /api/v2/audio?{optional params} (GET)  
+**Endpoint**: `/api/v2/audio?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of audio objects to return.  
-Maximum is 40. (default: 10)
+  Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example**
-GET /api/v2/audio?limit=25&page=4  
-**Returns**
-A JSON array of audio objects, ordered by **descending uploaded_at date**.
+**Example** GET `/api/v2/audio?limit=25&page=4`  
+**Returns** A JSON array of audio objects, ordered by **descending uploaded_at date**.
 
 
 

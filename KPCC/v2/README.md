@@ -397,33 +397,32 @@ Representation of an Event in the JSON response.
 #### Event by ID ####
 Find an event by its numerical ID.
 
-**Endpoint**: /api/v2/events/{id} (GET)  
+**Endpoint**: `/api/v2/events/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The numerical ID for the event.
 
-**Example**
-GET /api/v2/events/999  
-**Returns**
-A single JSON object representation of the requested event.
+**Example** GET `/api/v2/events/999`  
+**Returns** A single JSON object representation of the requested event.
 
 #### Events Collection ####
 Get a list of Events based on some parameters.
 
-**Endpoint**: /api/v2/events (GET)  
+**Endpoint**: `/api/v2/events` (GET)  
 **Params**:
 * `start_date` - (Date) Limit the results to only events after this date. Format is ISO. You can use this with `end_date` to limit to a range of dates. (default: Now)
-  Example: ?start_date=2013-06-13  
-* `end_date` - (Date) Limit the results to only events before this date. Format is ISO. You can use this with `start_date` to limit to a range of dates. (default: End of time)
-  Example: ?start_date=2013-06-13&end_date=  
+  Example: `?start_date=2013-06-13`  
+* `end_date` - (Date) Limit the results to only events before this date. (default: End of time)
+  Format is ISO date: YYYY-MM-DD
+  You can use this with `start_date` to limit to a range of dates.
+  Example: `?start_date=2013-06-13&end_date=`  
 * `types` - (comma-separated list) Limit the events to only those of these types. See <a href="#event-object-description">Event Object Description</a> `event_type` for the available types. (default: all types)
-  Example: ?types=comm,cult,hall
+  Example: `?types=comm,cult,hall`
 * `only_kpcc_events` - (Boolean) Limit the results to only KPCC-sponsored events. Options are "true" or "false". (default: false)
-  Example: ?only_kpcc_events=true
+  Example: `?only_kpcc_events=true`
 
-**Example**
-GET /api/v2/events?start_date=2013-06-13&end_date=2013-06-14&types=comm  
-**Returns**
-A JSON array of events.
+**Example**  
+GET `/api/v2/events?start_date=2013-06-13&end_date=2013-06-14&types=comm`  
+**Returns** A JSON array of events.
 
 
 

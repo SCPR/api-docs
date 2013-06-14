@@ -12,6 +12,7 @@
 ##### Deprecations
 * The `/api/v2/content` URL has been deprecated, in favor of `/api/v2/articles`. `content` will be removed in API v3.
 * Deprecated `permalink` on Article objects. Replaced with `public_url`.
+* Deprecated `url` on Category object. Replaced with `public_url`.
 * Deprecated audio's `content_obj_key`. Replaced with `article_obj_key`.
 
 

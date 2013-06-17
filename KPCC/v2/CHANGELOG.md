@@ -1,3 +1,8 @@
+### 2.5.0 (2013-06-17)
+##### Additions
+* Added the Events API endpoint.
+
+
 ### 2.4.0 (2013-06-14)
 ##### Additions
 * Added Editions endpoint, for requesting Editions and their Abstracts.

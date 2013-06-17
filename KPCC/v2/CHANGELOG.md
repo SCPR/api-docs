@@ -1,3 +1,8 @@
+### 2.5.1 (2013-06-17)
+##### Additions
+* Added audio and assets to Events
+
+
 ### 2.5.0 (2013-06-17)
 ##### Additions
 * Added the Events API endpoint.

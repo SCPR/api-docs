@@ -11,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.5.0  
+**Current Version**: 2.5.1  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
@@ -335,6 +335,20 @@ Representation of an Event in the JSON response.
  <tr>
    <td>program</td>
    <td>(Object) The associated KPCC program for this event. See <a href="#program-object-description">Program Object Description</a> for more.</td>
+ </tr>
+
+ <tr>
+   <td><strong>assets</strong></td>
+   <td>
+     (Array) The events's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+   </td>
+ </tr>
+
+ <tr>
+   <td><strong>audio</strong></td>
+   <td>
+     (Array) This events's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+   </td>
  </tr>
 </table>
 

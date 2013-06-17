@@ -2,6 +2,7 @@
 
 ### Notes on this Documentation ###
 * In Object descriptions, **bold** denotes that a node will *always* be present, even if it's empty. Otherwise, the node will only be present if it isn't empty. There are some noted exceptions.
+* Right now it's a little inconsistent what an "empty" attribute will look like - it could be an empty string, but may also be `null`. We recommend checking for both, just to be safe.
 * Object types are loose mappings to the database field type, or a Javascript type. For example:
     * Integer (could be a String or a Number).
     * Text - Long string (potentially >1 lines).
@@ -10,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.4.0  
+**Current Version**: 2.5.0  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 

@@ -1,4 +1,4 @@
-### 2.5.0 (unreleased)
+### 2.5.0 (2013-06-17)
 ##### Additions
 * Added the Events API endpoint.
 

@@ -407,17 +407,30 @@ Find an event by its numerical ID.
 #### Events Collection ####
 Get a list of Events based on some parameters.
 
+**All event dates are expressed and should be requested in Pacific Time.**
+
+The `start_date` and `end_date` parameters should be in ISO date format (`YYYY-MM-DD`), and will return a 400 Bad Request if the date is malformed. You can use `start_date` and `end_date` together in order to limit the results to a range of dates.
+
+Note that `start_date` and `end_date` both act on the `starts_at` attribute of the Events. These parameters are specifying a range of dates between which the `starts_at` attribute should fall. There is currently no way to query for a range of end dates. This does present a minor problem, in that events which started a long time ago but are still occurring (such as a daily gathering for a month-long service) may not show up on the first page of results.
+
+Here is the behavior of requesting date ranges. Note that the number of returned results will be limited by the `limit` parameter (or the default if none is specified):
+
+* If `start_date` and `end_date` are both specified, you get exactly what you asked for.
+* If only `start_date` is specified, then you get a range of events from `start_date` to the end of time.
+* If only `end_date` is specified and it's a date in the *future*, then you will get a range of events from `now` until `end_date`.
+* If only `end_date` is specified and it's a date in the *past*, then you will get a range of events from the beginning of time to `end_date`.
+
 **Endpoint**: `/api/v2/events` (GET)  
 **Params**:
-* `start_date` - (Date) Limit the results to only events after this date. Format is ISO. You can use this with `end_date` to limit to a range of dates. (default: Now)
+* `start_date` - (Date) Limit the results to only events after this date. (default: Now)
   Example: `?start_date=2013-06-13`  
-* `end_date` - (Date) Limit the results to only events before this date. (default: End of time)
-  Format is ISO date: YYYY-MM-DD
-  You can use this with `start_date` to limit to a range of dates.
+* `end_date` - (Date) Limit the results to only events before this date. (default: None; i.e., the end of time)
   Example: `?start_date=2013-06-13&end_date=`  
-* `types` - (comma-separated list) Limit the events to only those of these types. See <a href="#event-object-description">Event Object Description</a> `event_type` for the available types. (default: all types)
+* `types` - (comma-separated list) Limit the events to only those of these types. (default: None, i.e. all types)
+  See <a href="#event-object-description">Event Object Description</a> `event_type` for the available types.
   Example: `?types=comm,cult,hall`
-* `only_kpcc_events` - (Boolean) Limit the results to only KPCC-sponsored events. Options are "true" or "false". (default: false)
+* `only_kpcc_events` - (Boolean) Limit the results to only KPCC-sponsored events. 
+  Options are "true" or "false". (default: false)  
   Example: `?only_kpcc_events=true`
 
 **Example**  

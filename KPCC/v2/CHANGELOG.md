@@ -1,10 +1,14 @@
+### 2.5.0 (unreleased)
+##### Additions
+* Added the Events API endpoint.
+
+
 ### 2.4.0 (2013-06-14)
 ##### Additions
 * Added Editions endpoint, for requesting Editions and their Abstracts.
 * Added Category filtering for Content.
 * Added Category endpoint.
 * Added "slug" to the Category node.
-* Added Events endpoint
 
 ##### Changes
 * The `audio` node will now *always* be present on articles, even if empty.

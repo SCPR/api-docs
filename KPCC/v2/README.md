@@ -44,11 +44,6 @@ Note that NewsStory and ContentShell are lumped together.
     <td>segments</td>
     <td>shows/segment</td>
   </tr>
-  <tr>
-    <td>ShowEpisode</td>
-    <td>episodes</td>
-    <td>shows/episode</td>
-  </tr>
 </table>
 
 ### Objects ###

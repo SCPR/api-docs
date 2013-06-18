@@ -1,3 +1,8 @@
+### 2.6.0 (unreleased)
+#### Changes
+* Show Episodes are no longer available via the `articles` endpoint. Use the `episodes` endpoint instead. See documentation for more.
+
+
 ### 2.5.1 (2013-06-17)
 ##### Additions
 * Added audio and assets to Events

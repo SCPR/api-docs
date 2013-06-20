@@ -1,6 +1,6 @@
-### 2.6.0 (unreleased)
+### 2.6.0 (2013-06-20)
 #### Changes
-* Show Episodes are no longer available via the `articles` endpoint. Use the `episodes` endpoint instead. See documentation for more.
+* Show Episodes are no longer available via the `articles` endpoint. An `episodes` endpoint will be added in a later version.
 
 
 ### 2.5.1 (2013-06-17)

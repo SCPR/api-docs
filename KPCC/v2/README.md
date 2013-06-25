@@ -522,6 +522,20 @@ Representation of an Episode in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>assets</strong></td>
+    <td>
+      (Array) The episode's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>audio</strong></td>
+    <td>
+      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
     <td><strong>program</strong></td>
     <td>(Object) The program on which this episode aired. See <a href="#program-object-description">Program Object Description</a> for the object description.
     </td>

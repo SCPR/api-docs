@@ -11,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.6.0  
+**Current Version**: 2.7.0  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
@@ -474,8 +474,13 @@ Representation of a Category in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>public_url</strong></td>
+    <td>(String) The canonical URL.</td>
+  </tr>
+
+  <tr>
     <td><strong>url</strong></td>
-    <td>(String) The canonical URL for this category.</td>
+    <td>(String) <strong>DEPRECATED</strong>: Use <em>public_url</em>.</td>
   </tr>
 </table>
 
@@ -498,6 +503,145 @@ Get all categories.
 **Params**: None  
 **Example** GET `/api/v2/categories`  
 **Returns** A JSON array of all categories.
+
+
+
+## Programs ##
+**Endpoint**: `/api/v2/programs/`
+
+### Objects ###
+
+#### Program Object Description ####
+Representation of a Program in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>title</strong></td>
+    <td>(String) The title.</td>
+  </tr>
+
+  <tr>
+    <td><strong>slug</strong></td>
+    <td>(String) The URL slug (also acting UUID).</td>
+  </tr>
+
+  <tr>
+    <td><strong>program_type</strong></td>
+    <td>(String) The type of program. Options are `kpcc` or `remote`.</td>
+  </tr>
+
+  <tr>
+    <td><strong>host</strong></td>
+    <td>(String) The name(s) of the host(s).</td>
+  </tr>
+
+  <tr>
+    <td><strong>airtime</strong></td>
+    <td>(String) The human-friendly airtime. This cannot be parsed into an actual date/time object.</td>
+  </tr>
+
+  <tr>
+    <td><strong>description</strong></td>
+    <td>(Text) A description of this program.</td>
+  </tr>
+
+  <tr>
+    <td>podcast_url</td>
+    <td>(String) The URL to the podcast feed.</td>
+  </tr>
+
+  <tr>
+    <td>rss_url</td>
+    <td>(String) The URL to the RSS feed.</td>
+  </tr>
+
+  <tr>
+    <td><strong>public_url</strong></td>
+    <td>(String) The canonical URL.</td>
+  </tr>
+</table>
+
+### Endpoints ###
+
+#### Program by Slug (uuid) ####
+Find a program by its slug (uuid).
+
+**Endpoint**: `/api/v2/programs/{slug}` (GET)  
+**Params**: 
+* `slug` - (String) The slug (uuid).
+
+**Example** GET `/api/v2/programs/airtalk`  
+**Returns** A single JSON object representation of the requested program.
+
+#### Program Collection ####
+Get all programs.
+
+**Endpoint**: `/api/v2/programs` (GET)  
+**Params**: None  
+**Example** GET `/api/v2/programs`  
+**Returns** A JSON array of all programs.
+
+
+
+## Blogs ##
+**Endpoint**: `/api/v2/blogs/`
+
+### Objects ###
+
+#### Blog Object Description ####
+Representation of a Blog in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>title</strong></td>
+    <td>(String) The title.</td>
+  </tr>
+
+  <tr>
+    <td><strong>slug</strong></td>
+    <td>(String) The URL slug (also acting UUID).</td>
+  </tr>
+
+  <tr>
+    <td><strong>tagline</strong></td>
+    <td>(String) A short tagline.</td>
+  </tr>
+
+  <tr>
+    <td><strong>description</strong></td>
+    <td>(Text) A longer description of this blog.</td>
+  </tr>
+
+  <tr>
+    <td>rss_url</td>
+    <td>(String) The URL to the RSS feed.</td>
+  </tr>
+
+  <tr>
+    <td><strong>public_url</strong></td>
+    <td>(String) The canonical URL.</td>
+  </tr>
+</table>
+
+### Endpoints ###
+
+#### Blog by Slug (uuid) ####
+Find a blog by its slug (uuid).
+
+**Endpoint**: `/api/v2/blogs/{slug}` (GET)  
+**Params**: 
+* `slug` - (String) The slug (uuid).
+
+**Example** GET `/api/v2/blogs/politics`  
+**Returns** A single JSON object representation of the requested blog.
+
+#### Blog Collection ####
+Get all blogs.
+
+**Endpoint**: `/api/v2/blogs` (GET)  
+**Params**: None  
+**Example** GET `/api/v2/blogs`  
+**Returns** A JSON array of all blogs.
 
 
 

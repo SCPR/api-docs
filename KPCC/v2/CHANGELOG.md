@@ -1,3 +1,9 @@
+### 2.7.0 (2013-06-24)
+* Added Blogs endpoint
+* Added Programs endpoint
+* Fix bug in Category index endpoint
+
+
 ### 2.6.0 (2013-06-20)
 #### Changes
 * Show Episodes are no longer available via the `articles` endpoint. An `episodes` endpoint will be added in a later version.

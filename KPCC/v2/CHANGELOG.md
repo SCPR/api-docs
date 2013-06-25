@@ -1,3 +1,9 @@
+### 2.7.1 (2013-06-25)
+#### Changes
+* Reduced episodes maximum results to 8 per page.
+* Reduced episodes default limit to 4.
+
+
 ### 2.7.0 (2013-06-25)
 #### Additions
 * Added Blogs endpoint

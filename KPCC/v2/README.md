@@ -11,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.7.0  
+**Current Version**: 2.7.1  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
@@ -570,7 +570,7 @@ Get a list of episodes based on some parameters.
 * `air_date` - (Date) Limit the episodes returned to only this date. (default: none)  
   Example: `?air_date=2013-06-25`  
 * `limit` - (Integer) The number of episodes to return.  
-  Maximum is 16. (default: 8)
+  Maximum is 8. (default: 4)
 * `page` - (Integer) The page of results to return. (default: 1)
 
 **Example** GET `/api/v2/episodes?program=airtalk&date=2013-06-25`  

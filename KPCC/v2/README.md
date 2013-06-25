@@ -48,7 +48,7 @@ Note that NewsStory and ContentShell are lumped together.
 
 ### Objects ###
 
-#### Content Object Description ####
+#### Article Object Description ####
 This is how every article is represented by the API in its response.
 
 <table>
@@ -388,20 +388,6 @@ Representation of an Event in the JSON response.
   </tr>
 </table>
 
-#### Program Object Description ####
-
-<table>
-  <tr>
-    <td><strong>title</strong></td>
-    <td>(String) The title of the program.</td>
-  </tr>
-
-  <tr>
-    <td><strong>public_url</strong></td>
-    <td>(String) The URL of this program's landing pager.</td>
-  </tr>
-</table>
-
 ### Endpoints ###
 
 #### Event by ID ####
@@ -506,6 +492,75 @@ Get all categories.
 
 
 
+## Episodes ##
+**Endpoint**: `/api/v2/episodes/`
+
+### Objects ###
+
+#### Episode Object Description ####
+Representation of an Episode in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>title</strong></td>
+    <td>(String) The title.</td>
+  </tr>
+
+  <tr>
+    <td><strong>teaser</strong></td>
+    <td>(Text) A short teaser/description.</td>
+  </tr>
+
+  <tr>
+    <td><strong>air_date</strong></td>
+    <td>(Date) The air date. Format: YYYY-MM-DD</td>
+  </tr>
+
+  <tr>
+    <td><strong>public_url</strong></td>
+    <td>(String) The canonical URL.</td>
+  </tr>
+
+  <tr>
+    <td><strong>program</strong></td>
+    <td>(Object) The program on which this episode aired. See <a href="#program-object-description">Program Object Description</a> for the object description.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>segments</strong></td>
+    <td>(Array) The segments for this episode, represented as Articles. See <a href="#article-object-description">Article Object Description</a> for the object description.
+    </td>
+  </tr>
+</table>
+
+### Endpoints ###
+
+#### Episode by ID ####
+Find an episode by its id.
+
+**Endpoint**: `/api/v2/episodes/{id}` (GET)  
+**Params**: 
+* `id` - (Integer) The numerical ID.
+
+**Example** GET `/api/v2/programs/999`  
+**Returns** A single JSON object representation of the requested episode.
+
+#### Episode Collection ####
+Get a list of episodes based on some parameters.
+
+**Endpoint**: `/api/v2/episodes` (GET)  
+**Params**:
+* `program` - (String) The slug of the program by which to filter the episodes. (default: none)  
+  Example: `?program=airtalk`  
+* `air_date` - (Date) Limit the episodes returned to only this date. (default: none)  
+  Example: `?air_date=2013-06-25`  
+
+**Example** GET `/api/v2/episodes?program=airtalk&date=2013-06-25`  
+**Returns** A JSON array of the requested episodes ordered by **descending air_date**.
+
+
+
 ## Programs ##
 **Endpoint**: `/api/v2/programs/`
 
@@ -523,11 +578,6 @@ Representation of a Program in the JSON response.
   <tr>
     <td><strong>slug</strong></td>
     <td>(String) The URL slug (also acting UUID).</td>
-  </tr>
-
-  <tr>
-    <td><strong>program_type</strong></td>
-    <td>(String) The type of program. Options are `kpcc` or `remote`.</td>
   </tr>
 
   <tr>

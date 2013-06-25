@@ -1,6 +1,13 @@
-### 2.7.0 (2013-06-24)
+### 2.7.0 (2013-06-25)
+#### Additions
 * Added Blogs endpoint
 * Added Programs endpoint
+* Added Episodes endpoint
+
+#### Changes
+* Updated `program` object in Events to return a full program object. The API has not change.
+
+#### Fixes
 * Fix bug in Category index endpoint
 
 

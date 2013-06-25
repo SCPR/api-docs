@@ -569,6 +569,9 @@ Get a list of episodes based on some parameters.
   Example: `?program=airtalk`  
 * `air_date` - (Date) Limit the episodes returned to only this date. (default: none)  
   Example: `?air_date=2013-06-25`  
+* `limit` - (Integer) The number of episodes to return.  
+  Maximum is 16. (default: 8)
+* `page` - (Integer) The page of results to return. (default: 1)
 
 **Example** GET `/api/v2/episodes?program=airtalk&date=2013-06-25`  
 **Returns** A JSON array of the requested episodes ordered by **descending air_date**.

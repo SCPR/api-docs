@@ -1,3 +1,8 @@
+### 2.8.0 (2013-07-09)
+### Additions
+* Added the Schedule API.
+
+
 ### 2.7.1 (2013-06-25)
 #### Changes
 * Reduced episodes maximum results to 8 per page.

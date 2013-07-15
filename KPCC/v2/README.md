@@ -291,7 +291,7 @@ Get a block of schedule occurrences.
 * `start_time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to 
   start the block.  
   Maximum is 1 month from now. **Requesting further than 1 month in the future will return a 400 bad request.**  
-  (default: Beginning of this week).
+  (default: Beginning of this week, MONDAY).
 * `length` - (Integer) The number of seconds of schedule to retrieve.  
   Maximum is 1 week. (default: 1 week).
 

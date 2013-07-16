@@ -685,6 +685,17 @@ Representation of a Program in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>air_status</strong></td>
+    <td>
+      (String) The current air status. Possible values are:<br />
+      <ul>
+        <li>"onair"   - Currently Airing.</li>
+        <li>"online"  - Online Only (Podcast).</li>
+        <li>"archive" - No longer airing, but still publicly accessible.</li>
+        <li>"hidden"  - Not available or accessible.</li>
+      </ul>
+    </td>
+  <tr>
     <td><strong>airtime</strong></td>
     <td>(String) The human-friendly airtime. This cannot be parsed into an actual date/time object.</td>
   </tr>

@@ -1,5 +1,10 @@
+### 2.8.1 (2013-07-16)
+#### Additions
+* Added `air_status` to Program object.
+
+
 ### 2.8.0 (2013-07-09)
-### Additions
+#### Additions
 * Added the Schedule API.
 
 

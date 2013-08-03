@@ -1,3 +1,14 @@
+### 2.9.0 (unreleased)
+#### Additions
+* 
+
+#### Changes
+* Overall, the Programs API has gotten some subtle changes. More info soon.
+
+#### Deprecations
+* Deprecated `episode.teaser`, replaced with `episode.summary`.
+
+
 ### 2.8.1 (2013-07-16)
 #### Additions
 * Added `air_status` to Program object.

@@ -639,7 +639,7 @@ Find an episode by its id.
 **Params**: 
 * `id` - (Integer) The numerical ID.
 
-**Example** GET `/api/v2/programs/999`  
+**Example** GET `/api/v2/episodes/999`  
 **Returns** A single JSON object representation of the requested episode.
 
 #### Episode Collection ####

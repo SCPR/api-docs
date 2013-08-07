@@ -1,3 +1,5 @@
+## v2 Changelog
+
 ### 2.7.1 (2013-06-25)
 #### Changes
 * Reduced episodes maximum results to 8 per page.

@@ -1,5 +1,28 @@
 ## v2 Changelog
 
+### 2.9.0 (unreleased)
+#### Additions
+* 
+
+#### Changes
+* In the Episodes API, if you pass in a `program` parameter and the
+  program isn't found, a 404 status will be returned. Previously,
+  it just ignored the invalid slug and returned a list of recent episodes.
+
+#### Deprecations
+* Deprecated `episode.teaser`, replaced with `episode.summary`.
+
+
+### 2.8.1 (2013-07-16)
+#### Additions
+* Added `air_status` to Program object.
+
+
+### 2.8.0 (2013-07-09)
+#### Additions
+* Added the Schedule API.
+
+
 ### 2.7.1 (2013-06-25)
 #### Changes
 * Reduced episodes maximum results to 8 per page.

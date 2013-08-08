@@ -33,8 +33,8 @@ For SINGULAR resources, the key will be the SINGULAR version, such as
 * None
 
 #### Removals
-* The `content` endpoint - use the `articles` endpoint.
-* `article.permalink` - use `article.public_url`
-* `audio.content_obj_key` - use `audio.article_obj_key`
-* `category.url` - use `category.public_url`
-
+* Removed the `content` endpoint - use the `articles` endpoint.
+* Removed `article.permalink` - use `article.public_url`
+* Removed `audio.content_obj_key` - use `audio.article_obj_key`
+* Removed `category.url` - use `category.public_url`
+* Removed `episode.teaser`, replaced with `episode.summary`.

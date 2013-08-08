@@ -11,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.7.1  
+**Current Version**: 2.9.0  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
@@ -105,28 +105,28 @@ This is how every article is represented by the API in its response.
   <tr>
     <td>category</td>
     <td>
-      (Object) The article's category. See <a href="#category-object-description">Category Object Description</a> for the object description.
+      (Object) The article's category. See <a href="#category-object-description">Category Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The article's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+      (Array) The article's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This article's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+      (Array) This article's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>attributions</strong></td>
     <td>
-      (Array) Attributions (i.e., Bylines). See <a href="#attribution-object-description">Attribution Object Description</a> for the object description.
+      (Array) Attributions (i.e., Bylines). See <a href="#attribution-object-description">Attribution Object Description</a> for details.
     </td>
   </tr>
 </table>
@@ -240,6 +240,88 @@ Grab the most commented articles.
 
 
 
+
+## Schedule ##
+**Endpoint**: `/api/v2/schedule/`
+
+### Objects ###
+
+#### Schedule Occurrence Object Description ####
+Representation of a Schedule Occurrence in the JSON response.
+
+<table>
+  <tr>
+    <td><strong>title</strong></td>
+    <td>(String) The title.</td>
+  </tr>
+
+  <tr>
+    <td><strong>public_url</strong></td>
+    <td>(String) The URL for more information.</td>
+  </tr>
+
+  <tr>
+    <td><strong>starts_at</strong></td>
+    <td>(DateTime) The start date/time.</td>
+  </tr>
+
+  <tr>
+    <td><strong>ends_at</strong></td>
+    <td>(DateTime) The end date/time.</td>
+  </tr>
+
+  <tr>
+    <td><strong>is_recurring</strong></td>
+    <td>(Boolean) Whether or not this occurrence is part of a recurring series, or a distinct occurrence.</td>
+  </tr>
+
+  <tr>
+    <td>program</td>
+    <td>(Object) The associated program. See <a href="#program-object-description">Program Object Description</a> for details.</td>
+  </tr>
+</table>
+
+### Endpoints ###
+
+#### Block of Schedule ####
+Get a block of schedule occurrences.
+
+**Endpoint**: `/api/v2/schedule` (GET)  
+**Params**:
+* `start_time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to 
+  start the block.  
+  Maximum is 1 month from now. **Requesting further than 1 month in the future will return a 400 bad request.**  
+  (default: Beginning of this week, MONDAY).
+* `length` - (Integer) The number of seconds of schedule to retrieve.  
+  Maximum is 1 week. (default: 1 week).
+
+**Example** GET `/api/v2/schedule?start_time=1373406857&length=3600`  
+**Returns** An array of schedule occurrence objects for the requested range.
+
+#### Schedule Occurrence by Time ####
+Get the schedule occurrence on at a given time.
+
+**Endpoint**: `/api/v2/schedule/at` (GET)  
+**Params**:
+* `time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to check.  
+  Maximum is 1 month from now. **Requesting further than 1 month in the future will return a 400 bad request.**  
+  (default: Now)
+
+**Example** GET `/api/v2/at?time=1373406857`  
+**Returns** A single JSON object representation of a schedule occurrence at the requested time. Please note that **the response may be an empty object**. It's unlikely but technically possible.
+
+#### Currently Airing ####
+Get the currently airing schedule occurrence.  
+**This is just a vanity path for `/schedule/at` with no params.**
+
+**Endpoint**: `/api/v2/schedule/current` (GET)  
+**Params**: None  
+**Example** GET `/api/v2/current`  
+**Returns** A single JSON object representation of a schedule occurrence at the requested time. See above for warning about empty object.
+
+
+
+
 ## Events ##
 
 ### Objects ###
@@ -335,14 +417,14 @@ Representation of an Event in the JSON response.
  <tr>
    <td><strong>assets</strong></td>
    <td>
-     (Array) The events's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+     (Array) The events's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
    </td>
  </tr>
 
  <tr>
    <td><strong>audio</strong></td>
    <td>
-     (Array) This events's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+     (Array) This events's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
    </td>
  </tr>
 </table>
@@ -524,26 +606,26 @@ Representation of an Episode in the JSON response.
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The episode's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+      (Array) The episode's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>program</strong></td>
-    <td>(Object) The program on which this episode aired. See <a href="#program-object-description">Program Object Description</a> for the object description.
+    <td>(Object) The program on which this episode aired. See <a href="#program-object-description">Program Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>segments</strong></td>
-    <td>(Array) The segments for this episode, represented as Articles. See <a href="#article-object-description">Article Object Description</a> for the object description.
+    <td>(Array) The segments for this episode, represented as Articles. See <a href="#article-object-description">Article Object Description</a> for details.
     </td>
   </tr>
 </table>
@@ -557,7 +639,7 @@ Find an episode by its id.
 **Params**: 
 * `id` - (Integer) The numerical ID.
 
-**Example** GET `/api/v2/programs/999`  
+**Example** GET `/api/v2/episodes/999`  
 **Returns** A single JSON object representation of the requested episode.
 
 #### Episode Collection ####
@@ -565,7 +647,9 @@ Get a list of episodes based on some parameters.
 
 **Endpoint**: `/api/v2/episodes` (GET)  
 **Params**:
-* `program` - (String) The slug of the program by which to filter the episodes. (default: none)  
+* `program` - (String) The slug of the program by which to filter the episodes.
+  (default: none)  
+  If you pass in this parameter and the program isn't found, a 404 will be returned.  
   Example: `?program=airtalk`  
 * `air_date` - (Date) Limit the episodes returned to only this date. (default: none)  
   Example: `?air_date=2013-06-25`  
@@ -602,6 +686,17 @@ Representation of a Program in the JSON response.
     <td>(String) The name(s) of the host(s).</td>
   </tr>
 
+  <tr>
+    <td><strong>air_status</strong></td>
+    <td>
+      (String) The current air status. Possible values are:<br />
+      <ul>
+        <li>"onair"   - Currently Airing.</li>
+        <li>"online"  - Online Only (Podcast).</li>
+        <li>"archive" - No longer airing, but still publicly accessible.</li>
+        <li>"hidden"  - Not available or accessible.</li>
+      </ul>
+    </td>
   <tr>
     <td><strong>airtime</strong></td>
     <td>(String) The human-friendly airtime. This cannot be parsed into an actual date/time object.</td>
@@ -734,7 +829,7 @@ Representation of an Edition in the JSON response.
   <tr>
     <td><strong>abstracts</strong></td>
     <td>
-      (Array) An array of this Edition's Abstracts. See <a href="#abstract-object-description">Abstract Object Description</a> for the object description.
+      (Array) An array of this Edition's Abstracts. See <a href="#abstract-object-description">Abstract Object Description</a> for details.
     </td>
   </tr>
 </table>
@@ -778,21 +873,21 @@ Representation of an Abstract in the JSON response.
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The abstracts's assets. See <a href="#asset-object-description">Asset Object Description</a> for the object description.
+      (Array) The abstracts's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This abstracts's Audio. See <a href="#audio-object-description">Audio Object Description</a> for the object description.
+      (Array) This abstracts's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
     </td>
   </tr>
 
   <tr>
     <td>category</td>
     <td>
-      (Object) The category locally assigned to this article. See <a href="#category-object-description">Category Object Description</a> for the object description.
+      (Object) The category locally assigned to this article. See <a href="#category-object-description">Category Object Description</a> for details.
     </td>
   </tr>
 

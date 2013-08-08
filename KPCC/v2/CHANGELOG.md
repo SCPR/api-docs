@@ -1,6 +1,8 @@
+## v2 Changelog
+
 ### 2.9.0 (unreleased)
 #### Additions
-* 
+* Added `program.twitter_handle`
 
 #### Changes
 * In the Episodes API, if you pass in a `program` parameter and the

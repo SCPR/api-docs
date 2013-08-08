@@ -555,7 +555,9 @@ Get a list of episodes based on some parameters.
 
 **Endpoint**: `/api/v3/episodes` (GET)  
 **Params**:
-* `program` - (String) The slug of the program by which to filter the episodes. (default: none)  
+* `program` - (String) The slug of the program by which to filter the episodes.
+  (default: none)  
+  If you pass in this parameter and the program isn't found, a 404 will be returned.  
   Example: `?program=airtalk`  
 * `air_date` - (Date) Limit the episodes returned to only this date. (default: none)  
   Example: `?air_date=2013-06-25`  

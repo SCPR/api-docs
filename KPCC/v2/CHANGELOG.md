@@ -3,7 +3,9 @@
 * 
 
 #### Changes
-* Overall, the Programs API has gotten some subtle changes. More info soon.
+* In the Episodes API, if you pass in a `program` parameter and the
+  program isn't found, a 404 status will be returned. Previously,
+  it just ignored the invalid slug and returned a list of recent episodes.
 
 #### Deprecations
 * Deprecated `episode.teaser`, replaced with `episode.summary`.

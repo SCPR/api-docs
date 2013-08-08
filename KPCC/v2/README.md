@@ -697,6 +697,13 @@ Representation of a Program in the JSON response.
         <li>"hidden"  - Not available or accessible.</li>
       </ul>
     </td>
+  </tr>
+
+  <tr>
+    <td>twitter_handle</td>
+    <td>(String) The twitter handle. Does not include the @ symbol.</td>
+  </tr>
+
   <tr>
     <td><strong>airtime</strong></td>
     <td>(String) The human-friendly airtime. This cannot be parsed into an actual date/time object.</td>

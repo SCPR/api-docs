@@ -11,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.7.1  
+**Current Version**: 2.9.0  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 
@@ -647,7 +647,9 @@ Get a list of episodes based on some parameters.
 
 **Endpoint**: `/api/v2/episodes` (GET)  
 **Params**:
-* `program` - (String) The slug of the program by which to filter the episodes. (default: none)  
+* `program` - (String) The slug of the program by which to filter the episodes.
+  (default: none)  
+  If you pass in this parameter and the program isn't found, a 404 will be returned.  
   Example: `?program=airtalk`  
 * `air_date` - (Date) Limit the episodes returned to only this date. (default: none)  
   Example: `?air_date=2013-06-25`  
@@ -695,6 +697,13 @@ Representation of a Program in the JSON response.
         <li>"hidden"  - Not available or accessible.</li>
       </ul>
     </td>
+  </tr>
+
+  <tr>
+    <td>twitter_handle</td>
+    <td>(String) The twitter handle. Does not include the @ symbol.</td>
+  </tr>
+
   <tr>
     <td><strong>airtime</strong></td>
     <td>(String) The human-friendly airtime. This cannot be parsed into an actual date/time object.</td>

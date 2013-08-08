@@ -1,3 +1,18 @@
+## v2 Changelog
+
+### 2.9.0 (unreleased)
+#### Additions
+* Added `program.twitter_handle`
+
+#### Changes
+* In the Episodes API, if you pass in a `program` parameter and the
+  program isn't found, a 404 status will be returned. Previously,
+  it just ignored the invalid slug and returned a list of recent episodes.
+
+#### Deprecations
+* Deprecated `episode.teaser`, replaced with `episode.summary`.
+
+
 ### 2.8.1 (2013-07-16)
 #### Additions
 * Added `air_status` to Program object.

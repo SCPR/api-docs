@@ -11,7 +11,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 2.9.0  
+**Current Version**: 2.9.1  
 **Endpoint**: `/api/v2/`  
 **Response**: JSON only
 

@@ -1,5 +1,11 @@
 ## v2 Changelog
 
+### 2.9.1 (2013-08-09)
+#### Bug Fixes
+* `Program.twitter_handle` was showing up even if it was empty, contrary to the
+  documentation.
+
+
 ### 2.9.0 (2013-08-09)
 #### Additions
 * Added `program.twitter_handle`

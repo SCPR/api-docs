@@ -1,6 +1,6 @@
 ## v2 Changelog
 
-### 2.9.0 (unreleased)
+### 2.9.0 (2013-08-09)
 #### Additions
 * Added `program.twitter_handle`
 

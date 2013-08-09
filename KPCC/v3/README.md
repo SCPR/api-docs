@@ -1,5 +1,7 @@
 # KPCC Public API v3 Documentation
 
+**WARNING** v3 of the API is in BETA and shouldn't be used yet.
+
 ### Notes on this Documentation ###
 * In Object descriptions, **bold** denotes that a node will *always* be present, even if it's empty. Otherwise, the node will only be present if it isn't empty. There are some noted exceptions.
 * Right now it's a little inconsistent what an "empty" attribute will look like - it could be an empty string, but may also be `null`. We recommend checking for both, just to be safe.
@@ -11,7 +13,7 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 3.0.0  
+**Current Version**: 3.0.0.beta  
 **Endpoint**: `/api/v3/`  
 **Response**: JSON only
 

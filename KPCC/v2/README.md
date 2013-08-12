@@ -613,7 +613,7 @@ Representation of an Episode in the JSON response.
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details. Note that this is reserved for <strong>full episode audio</strong>, which may not always be available, even if this episode has segments with audio. This is the case with episodes coming from NPR.
     </td>
   </tr>
 

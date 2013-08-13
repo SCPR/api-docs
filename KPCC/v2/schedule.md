@@ -34,7 +34,7 @@ Representation of a Schedule Occurrence in the JSON response.
 
   <tr>
     <td>program</td>
-    <td>(Object) The associated program. See <a href="#program-object-description">Program Object Description</a> for details.</td>
+    <td>(Program Object) The associated program. See Program Object Description for details.</td>
   </tr>
 </table>
 
@@ -45,7 +45,7 @@ Get a block of schedule occurrences.
 
 **Endpoint**: `/schedule` (GET)  
 **Params**:
-* `start_time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to 
+* `start_time` - (Integer) The **Unix Timestamp** for the date/time to 
   start the block.  
   Maximum is 1 month from now. **Requesting further than 1 month in the future will return a 400 bad request.**  
   (default: Beginning of this week, MONDAY).
@@ -60,7 +60,7 @@ Get the schedule occurrence on at a given time.
 
 **Endpoint**: `/schedule/at` (GET)  
 **Params**:
-* `time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to check.  
+* `time` - (Integer) The **Unix Timestamp** for the date/time to check.  
   Maximum is 1 month from now. **Requesting further than 1 month in the future will return a 400 bad request.**  
   (default: Now)
 

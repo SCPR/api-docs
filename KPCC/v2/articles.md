@@ -86,28 +86,28 @@ This is how every article is represented by the API in its response.
   <tr>
     <td>category</td>
     <td>
-      (Object) The article's category. See [Category Object Description](categories.md#category-object-description) for details.
+      (Category Object) The category. See Category Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The article's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+      (Array of Asset Objects) The article's assets. See Asset Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This article's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+      (Array of Audio Objects) This article's Audio. See Audio Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>attributions</strong></td>
     <td>
-      (Array) Attributions (i.e., Bylines). See <a href="#attribution-object-description">Attribution Object Description</a> for details.
+      (Array of Attribution Objects) Attributions (i.e., Bylines). See Attribution Object Description for details.
     </td>
   </tr>
 </table>

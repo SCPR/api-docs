@@ -77,30 +77,30 @@ Representation of an Event in the JSON response.
 
  <tr>
    <td><strong>location</strong></td>
-   <td>(Object) The location of this event. See <a href="#location-object-description">Location Object Description</a> for more.</td>
+   <td>(Object) The location of this event. See Location Object Description for more.</td>
  </tr>
 
  <tr>
    <td><strong>sponsor</strong></td>
-   <td>(Object) The sponsor for this event. See <a href="#sponsor-object-description">Sponsor Object Description</a> for more.</td>
+   <td>(Object) The sponsor for this event. See Sponsor Object Description for more.</td>
  </tr>
 
  <tr>
    <td>program</td>
-   <td>(Object) The associated KPCC program for this event. See <a href="#program-object-description">Program Object Description</a> for more.</td>
+   <td>(Program Object) The associated KPCC program for this event. See Program Object Description for more.</td>
  </tr>
 
  <tr>
    <td><strong>assets</strong></td>
    <td>
-     (Array) The events's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+     (Array of Asset Objects) The events's assets. See Asset Object Description for details.
    </td>
  </tr>
 
  <tr>
    <td><strong>audio</strong></td>
    <td>
-     (Array) This events's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+     (Array of Audio Objects) This events's Audio. See Audio Object Description for details.
    </td>
  </tr>
 </table>
@@ -181,7 +181,7 @@ Here is the behavior of requesting date ranges. Note that the number of returned
 * `end_date` - (Date) Limit the results to only events before this date. (default: None; i.e., the end of time)
   Example: `?start_date=2013-06-13&end_date=`  
 * `types` - (comma-separated list) Limit the events to only those of these types. (default: None, i.e. all types)
-  See <a href="#event-object-description">Event Object Description</a> `event_type` for the available types.
+  See Event Object Description `event_type` for the available types.
   Example: `?types=comm,cult,hall`
 * `only_kpcc_events` - (Boolean) Limit the results to only KPCC-sponsored events. 
   Options are "true" or "false". (default: false)  

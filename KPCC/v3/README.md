@@ -29,7 +29,6 @@
 * [Editions](#editions)
 * [Audio](#audio)
 * [Alerts](#alerts)
-* [Errors](#errors)
 
 
 
@@ -117,28 +116,28 @@ This is how every article is represented by the API in its response.
   <tr>
     <td>category</td>
     <td>
-      (Object) The article's category. See <a href="#category-object-description">Category Object Description</a> for details.
+      (Object) The article's category. See Category Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The article's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+      (Array) The article's assets. See Asset Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This article's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+      (Array) This article's Audio. See Audio Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>attributions</strong></td>
     <td>
-      (Array) Attributions (i.e., Bylines). See <a href="#attribution-object-description">Attribution Object Description</a> for details.
+      (Array) Attributions (i.e., Bylines). See Attribution Object Description for details.
     </td>
   </tr>
 </table>
@@ -290,7 +289,7 @@ Representation of a Schedule Occurrence in the JSON response.
 
   <tr>
     <td>program</td>
-    <td>(Object) The associated program. See <a href="#program-object-description">Program Object Description</a> for details.</td>
+    <td>(Object) The associated program. See Program Object Description for details.</td>
   </tr>
 </table>
 
@@ -415,30 +414,30 @@ Representation of an Event in the JSON response.
 
  <tr>
    <td><strong>location</strong></td>
-   <td>(Object) The location of this event. See <a href="#location-object-description">Location Object Description</a> for more.</td>
+   <td>(Object) The location of this event. See Location Object Description for more.</td>
  </tr>
 
  <tr>
    <td><strong>sponsor</strong></td>
-   <td>(Object) The sponsor for this event. See <a href="#sponsor-object-description">Sponsor Object Description</a> for more.</td>
+   <td>(Object) The sponsor for this event. See Sponsor Object Description for more.</td>
  </tr>
 
  <tr>
    <td>program</td>
-   <td>(Object) The associated KPCC program for this event. See <a href="#program-object-description">Program Object Description</a> for more.</td>
+   <td>(Object) The associated KPCC program for this event. See Program Object Description for more.</td>
  </tr>
 
  <tr>
    <td><strong>assets</strong></td>
    <td>
-     (Array) The events's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+     (Array) The events's assets. See Asset Object Description for details.
    </td>
  </tr>
 
  <tr>
    <td><strong>audio</strong></td>
    <td>
-     (Array) This events's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+     (Array) This events's Audio. See Audio Object Description for details.
    </td>
  </tr>
 </table>
@@ -519,7 +518,7 @@ Here is the behavior of requesting date ranges. Note that the number of returned
 * `end_date` - (Date) Limit the results to only events before this date. (default: None; i.e., the end of time)
   Example: `?start_date=2013-06-13&end_date=`  
 * `types` - (comma-separated list) Limit the events to only those of these types. (default: None, i.e. all types)
-  See <a href="#event-object-description">Event Object Description</a> `event_type` for the available types.
+  See Event Object Description `event_type` for the available types.
   Example: `?types=comm,cult,hall`
 * `only_kpcc_events` - (Boolean) Limit the results to only KPCC-sponsored events. 
   Options are "true" or "false". (default: false)  
@@ -617,26 +616,26 @@ Representation of an Episode in the JSON response.
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The episode's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+      (Array) The episode's assets. See Asset Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details. Note that this is reserved for <strong>full episode audio</strong>, which may not always be available, even if this episode has segments with audio. This is the case with episodes coming from NPR.
+      (Array) This episode's Audio. See Audio Object Description for details. Note that this is reserved for <strong>full episode audio</strong>, which may not always be available, even if this episode has segments with audio. This is the case with episodes coming from NPR.
     </td>
   </tr>
 
   <tr>
     <td><strong>program</strong></td>
-    <td>(Object) The program on which this episode aired. See <a href="#program-object-description">Program Object Description</a> for details.
+    <td>(Object) The program on which this episode aired. See Program Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>segments</strong></td>
-    <td>(Array) The segments for this episode, represented as Articles. See <a href="#article-object-description">Article Object Description</a> for details.
+    <td>(Array) The segments for this episode, represented as Articles. See Article Object Description for details.
     </td>
   </tr>
 </table>
@@ -847,7 +846,7 @@ Representation of an Edition in the JSON response.
   <tr>
     <td><strong>abstracts</strong></td>
     <td>
-      (Array) An array of this Edition's Abstracts. See <a href="#abstract-object-description">Abstract Object Description</a> for details.
+      (Array) An array of this Edition's Abstracts. See Abstract Object Description for details.
     </td>
   </tr>
 </table>
@@ -891,21 +890,21 @@ Representation of an Abstract in the JSON response.
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The abstracts's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+      (Array) The abstracts's assets. See Asset Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This abstracts's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+      (Array) This abstracts's Audio. See Audio Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td>category</td>
     <td>
-      (Object) The category locally assigned to this article. See <a href="#category-object-description">Category Object Description</a> for details.
+      (Object) The category locally assigned to this article. See Category Object Description for details.
     </td>
   </tr>
 

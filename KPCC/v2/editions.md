@@ -20,7 +20,7 @@ Representation of an Edition in the JSON response.
   <tr>
     <td><strong>abstracts</strong></td>
     <td>
-      (Array) An array of this Edition's Abstracts. See <a href="#abstract-object-description">Abstract Object Description</a> for details.
+      (Array of Abstract Objects) An array of this Edition's Abstracts. See Abstract Object Description for details.
     </td>
   </tr>
 </table>
@@ -64,21 +64,21 @@ Representation of an Abstract in the JSON response.
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The abstracts's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+      (Array of Asset Objects) The abstracts's assets. See Asset Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This abstracts's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details.
+      (Array of Audio Objects) This abstracts's Audio. See Audio Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td>category</td>
     <td>
-      (Object) The category locally assigned to this article. See <a href="#category-object-description">Category Object Description</a> for details.
+      (Category Object) The category locally assigned to this article. See Category Object Description for details.
     </td>
   </tr>
 

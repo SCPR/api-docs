@@ -30,26 +30,26 @@ Representation of an Episode in the JSON response.
   <tr>
     <td><strong>assets</strong></td>
     <td>
-      (Array) The episode's assets. See <a href="#asset-object-description">Asset Object Description</a> for details.
+      (Array of Asset Objects) The episode's assets. See Asset Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>audio</strong></td>
     <td>
-      (Array) This episode's Audio. See <a href="#audio-object-description">Audio Object Description</a> for details. Note that this is reserved for <strong>full episode audio</strong>, which may not always be available, even if this episode has segments with audio. This is the case with episodes coming from NPR.
+      (Array of Audio Objects) This episode's Audio. See Audio Object Description for details. Note that this is reserved for <strong>full episode audio</strong>, which may not always be available, even if this episode has segments with audio. This is the case with episodes coming from NPR.
     </td>
   </tr>
 
   <tr>
     <td><strong>program</strong></td>
-    <td>(Object) The program on which this episode aired. See <a href="#program-object-description">Program Object Description</a> for details.
+    <td>(Program Object) The program on which this episode aired. See Program Object Description for details.
     </td>
   </tr>
 
   <tr>
     <td><strong>segments</strong></td>
-    <td>(Array) The segments for this episode, represented as Articles. See <a href="#article-object-description">Article Object Description</a> for details.
+    <td>(Array of Article Objects) The segments for this episode, represented as Articles. See Article Object Description for details.
     </td>
   </tr>
 

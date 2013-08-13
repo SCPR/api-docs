@@ -2,7 +2,7 @@
 
 ### 2.10.0 (unreleased)
 #### Additions
-* Added Breaking News Alerts.
+* Added Alerts.
 
 
 ### 2.9.1 (2013-08-09)

@@ -19,17 +19,16 @@
 
 
 ## Table of Contents ##
-* [Articles](articles.md#articles)
-* [Schedule](schedule.md#schedule)
-* [Events](events.md#events)
-* [Categories](categories.md#categories)
-* [Episodes](episodes.md#episodes)
-* [Programs](programs.md#programs)
-* [Blogs](blogs.md#blogs)
-* [Editions](editions.md#editions)
-* [Audio](audio.md#audio)
-* [Alerts](alerts.md#alerts)
-* [Errors](errors.md#errors)
+* [Articles](endpoints/articles.md#articles)
+* [Schedule](endpoints/schedule.md#schedule)
+* [Events](endpoints/events.md#events)
+* [Categories](endpoints/categories.md#categories)
+* [Episodes](endpoints/episodes.md#episodes)
+* [Programs](endpoints/programs.md#programs)
+* [Blogs](endpoints/blogs.md#blogs)
+* [Editions](endpoints/editions.md#editions)
+* [Audio](endpoints/audio.md#audio)
+* [Alerts](endpoints/alerts.md#alerts)
 
 
 

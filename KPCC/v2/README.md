@@ -1,6 +1,7 @@
 # KPCC Public API v2 Documentation
 
 ### Notes on this Documentation ###
+* All API URL's will look something like: `GET http://www.scpr.org/api/v2/articles`. Everything up to the actual object endpoint ("articles" in this case) has been snipped for brevity.
 * In Object descriptions, **bold** denotes that a node will *always* be present, even if it's empty. Otherwise, the node will only be present if it isn't empty. There are some noted exceptions.
 * Right now it's a little inconsistent what an "empty" attribute will look like - it could be an empty string, but may also be `null`. We recommend checking for both, just to be safe.
 * Object types are loose mappings to the database field type, or a Javascript type. For example:
@@ -12,7 +13,7 @@
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
 **Current Version**: 2.10.0  
-**Endpoint**: `/api/v2/`  
+**Root Endpoint**: `/api/v2`  
 **Response**: JSON only
 
 ## Table of Contents ##
@@ -32,7 +33,7 @@
 
 
 ## Articles ##
-**Endpoint**: `/api/v2/articles/`
+**Endpoint**: `/articles/`
 
 #### Supported Classes ###
 Note that NewsStory and ContentShell are lumped together.
@@ -196,28 +197,28 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
 #### Article by URL ####
 Find an article by its URL.
 
-**Endpoint** `/api/v2/articles/by_url?url={url}` (GET)  
+**Endpoint** `/articles/by_url?url={url}` (GET)  
 **Params**  
 * `url` - (String) The full URL of the article.
 
 **Example**  
-GET `/api/v2/articles/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/obama-and-stuff/`  
+GET `/articles/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/obama-and-stuff/`  
 **Returns** A single JSON object representation of the requested article.
 
 #### Article by ID (obj_key) ####
 Find an article by its obj_key (`blogs/entry:999`)
 
-**Endpoint** `/api/v2/articles/{obj_key}` (GET)  
+**Endpoint** `/articles/{obj_key}` (GET)  
 **Params**:  
 * `obj_key` - (String) The object key (API id) for the article.
 
-**Example** GET `/api/v2/articles/blogs/entry:999`  
+**Example** GET `/articles/blogs/entry:999`  
 **Returns** A single JSON object representation of the requested article.
 
 #### Articles Collection ####
 Find a collection of articles based on several parameters.
 
-**Endpoint**: `/api/v2/articles?{optional params}` (GET)  
+**Endpoint**: `/articles?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `query` - (String) A search query.  
   Example: `?query=Obama+Healthcare`
@@ -233,30 +234,30 @@ Find a collection of articles based on several parameters.
 * `page` - (Integer) The page of results to return. (default: 1)
 
 **Example**  
-GET `/api/v2/articles?query=Obama&types=news,blogs,segments&limit=25&page=4`  
+GET `/articles?query=Obama&types=news,blogs,segments&limit=25&page=4`  
 **Returns** A JSON array of article objects, ordered by **descending published_at date**.
 
 #### Most Viewed ####
 Grab the most viewed articles.
 
-**Endpoint**: `/api/v2/articles/most_viewed` (GET)  
+**Endpoint**: `/articles/most_viewed` (GET)  
 **Params**: None  
-**Example** GET `/api/v2/articles/most_viewed`  
+**Example** GET `/articles/most_viewed`  
 **Returns** A JSON array of article objects.
 
 #### Most Commented ####
 Grab the most commented articles.
 
-**Endpoint**: `/api/v2/articles/most_commented` (GET)  
+**Endpoint**: `/articles/most_commented` (GET)  
 **Params**: None  
-**Example** GET `/api/v2/articles/most_commented`  
+**Example** GET `/articles/most_commented`  
 **Returns** A JSON array of article objects.
 
 
 
 
 ## Schedule ##
-**Endpoint**: `/api/v2/schedule/`
+**Endpoint**: `/schedule/`
 
 ### Objects ###
 
@@ -300,7 +301,7 @@ Representation of a Schedule Occurrence in the JSON response.
 #### Block of Schedule ####
 Get a block of schedule occurrences.
 
-**Endpoint**: `/api/v2/schedule` (GET)  
+**Endpoint**: `/schedule` (GET)  
 **Params**:
 * `start_time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to 
   start the block.  
@@ -309,28 +310,28 @@ Get a block of schedule occurrences.
 * `length` - (Integer) The number of seconds of schedule to retrieve.  
   Maximum is 1 week. (default: 1 week).
 
-**Example** GET `/api/v2/schedule?start_time=1373406857&length=3600`  
+**Example** GET `/schedule?start_time=1373406857&length=3600`  
 **Returns** An array of schedule occurrence objects for the requested range.
 
 #### Schedule Occurrence by Time ####
 Get the schedule occurrence on at a given time.
 
-**Endpoint**: `/api/v2/schedule/at` (GET)  
+**Endpoint**: `/schedule/at` (GET)  
 **Params**:
 * `time` - (Integer) The <strong>Unix Timestamp</strong> for the date/time to check.  
   Maximum is 1 month from now. **Requesting further than 1 month in the future will return a 400 bad request.**  
   (default: Now)
 
-**Example** GET `/api/v2/at?time=1373406857`  
+**Example** GET `/schedule/at?time=1373406857`  
 **Returns** A single JSON object representation of a schedule occurrence at the requested time. Please note that **the response may be an empty object**. It's unlikely but technically possible.
 
 #### Currently Airing ####
 Get the currently airing schedule occurrence.  
 **This is just a vanity path for `/schedule/at` with no params.**
 
-**Endpoint**: `/api/v2/schedule/current` (GET)  
+**Endpoint**: `/schedule/current` (GET)  
 **Params**: None  
-**Example** GET `/api/v2/current`  
+**Example** GET `/schedule/current`  
 **Returns** A single JSON object representation of a schedule occurrence at the requested time. See above for warning about empty object.
 
 
@@ -489,11 +490,11 @@ Representation of an Event in the JSON response.
 #### Event by ID ####
 Find an event by its numerical ID.
 
-**Endpoint**: `/api/v2/events/{id}` (GET)  
+**Endpoint**: `/events/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The numerical ID for the event.
 
-**Example** GET `/api/v2/events/999`  
+**Example** GET `/events/999`  
 **Returns** A single JSON object representation of the requested event.
 
 #### Events Collection ####
@@ -512,7 +513,7 @@ Here is the behavior of requesting date ranges. Note that the number of returned
 * If only `end_date` is specified and it's a date in the *future*, then you will get a range of events from `now` until `end_date`.
 * If only `end_date` is specified and it's a date in the *past*, then you will get a range of events from the beginning of time to `end_date`.
 
-**Endpoint**: `/api/v2/events` (GET)  
+**Endpoint**: `/events` (GET)  
 **Params**:
 * `start_date` - (Date) Limit the results to only events after this date. (default: Now)
   Example: `?start_date=2013-06-13`  
@@ -526,13 +527,13 @@ Here is the behavior of requesting date ranges. Note that the number of returned
   Example: `?only_kpcc_events=true`
 
 **Example**  
-GET `/api/v2/events?start_date=2013-06-13&end_date=2013-06-14&types=comm`  
+GET `/events?start_date=2013-06-13&end_date=2013-06-14&types=comm`  
 **Returns** A JSON array of events.
 
 
 
 ## Categories ##
-**Endpoint**: `/api/v2/categories/`
+**Endpoint**: `/categories/`
 
 ### Objects ###
 
@@ -571,25 +572,25 @@ Representation of a Category in the JSON response.
 #### Category by Slug (uuid) ####
 Find a category by its slug (uuid).
 
-**Endpoint**: `/api/v2/categories/{slug}` (GET)  
+**Endpoint**: `/categories/{slug}` (GET)  
 **Params**: 
 * `slug` - (String) The slug (uuid) for the category.
 
-**Example** GET `/api/v2/categories/film`  
+**Example** GET `/categories/film`  
 **Returns** A single JSON object representation of the requested category.
 
 #### Category Collection ####
 Get all categories.
 
-**Endpoint**: `/api/v2/categories` (GET)  
+**Endpoint**: `/categories` (GET)  
 **Params**: None  
-**Example** GET `/api/v2/categories`  
+**Example** GET `/categories`  
 **Returns** A JSON array of all categories.
 
 
 
 ## Episodes ##
-**Endpoint**: `/api/v2/episodes/`
+**Endpoint**: `/episodes/`
 
 ### Objects ###
 
@@ -649,17 +650,17 @@ Representation of an Episode in the JSON response.
 #### Episode by ID ####
 Find an episode by its id.
 
-**Endpoint**: `/api/v2/episodes/{id}` (GET)  
+**Endpoint**: `/episodes/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The numerical ID.
 
-**Example** GET `/api/v2/episodes/999`  
+**Example** GET `/episodes/999`  
 **Returns** A single JSON object representation of the requested episode.
 
 #### Episode Collection ####
 Get a list of episodes based on some parameters.
 
-**Endpoint**: `/api/v2/episodes` (GET)  
+**Endpoint**: `/episodes` (GET)  
 **Params**:
 * `program` - (String) The slug of the program by which to filter the episodes.
   (default: none)  
@@ -671,13 +672,13 @@ Get a list of episodes based on some parameters.
   Maximum is 8. (default: 4)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example** GET `/api/v2/episodes?program=airtalk&date=2013-06-25`  
+**Example** GET `/episodes?program=airtalk&date=2013-06-25`  
 **Returns** A JSON array of the requested episodes ordered by **descending air_date**.
 
 
 
 ## Programs ##
-**Endpoint**: `/api/v2/programs/`
+**Endpoint**: `/programs/`
 
 ### Objects ###
 
@@ -749,25 +750,25 @@ Representation of a Program in the JSON response.
 #### Program by Slug (uuid) ####
 Find a program by its slug (uuid).
 
-**Endpoint**: `/api/v2/programs/{slug}` (GET)  
+**Endpoint**: `/programs/{slug}` (GET)  
 **Params**: 
 * `slug` - (String) The slug (uuid).
 
-**Example** GET `/api/v2/programs/airtalk`  
+**Example** GET `/programs/airtalk`  
 **Returns** A single JSON object representation of the requested program.
 
 #### Program Collection ####
 Get all programs.
 
-**Endpoint**: `/api/v2/programs` (GET)  
+**Endpoint**: `/programs` (GET)  
 **Params**: None  
-**Example** GET `/api/v2/programs`  
+**Example** GET `/programs`  
 **Returns** A JSON array of all programs.
 
 
 
 ## Blogs ##
-**Endpoint**: `/api/v2/blogs/`
+**Endpoint**: `/blogs/`
 
 ### Objects ###
 
@@ -811,25 +812,25 @@ Representation of a Blog in the JSON response.
 #### Blog by Slug (uuid) ####
 Find a blog by its slug (uuid).
 
-**Endpoint**: `/api/v2/blogs/{slug}` (GET)  
+**Endpoint**: `/blogs/{slug}` (GET)  
 **Params**: 
 * `slug` - (String) The slug (uuid).
 
-**Example** GET `/api/v2/blogs/politics`  
+**Example** GET `/blogs/politics`  
 **Returns** A single JSON object representation of the requested blog.
 
 #### Blog Collection ####
 Get all blogs.
 
-**Endpoint**: `/api/v2/blogs` (GET)  
+**Endpoint**: `/blogs` (GET)  
 **Params**: None  
-**Example** GET `/api/v2/blogs`  
+**Example** GET `/blogs`  
 **Returns** A JSON array of all blogs.
 
 
 
 ## Editions ##
-**Endpoint**: `/api/v2/editions/`
+**Endpoint**: `/editions/`
 
 ### Objects ###
 
@@ -919,30 +920,30 @@ Representation of an Abstract in the JSON response.
 #### Edition by ID ####
 Find an edition by its ID.
 
-**Endpoint**: `/api/v2/editions/{id}` (GET)  
+**Endpoint**: `/editions/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The ID for the edition.
 
-**Example** GET `/api/v2/editions/999`  
+**Example** GET `/editions/999`  
 **Returns** A single JSON object representation of the requested edition.
 
 #### Editions Collection ####
 Find a collection of editions, based on several parameters.
 
-**Endpoint**: `/api/v2/editions?{optional params}` (GET)  
+**Endpoint**: `/editions?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of editions to return.  
   Maximum is 4. (default: 2)
 * `page` - (Integer) The page of results to return. (default: 1)
 
 **Example**  
-GET `/api/v2/editions?limit=1` (this example will retrieve the most recent, i.e. "current", edition)  
+GET `/editions?limit=1` (this example will retrieve the most recent, i.e. "current", edition)  
 **Returns** A JSON array of edition objects, ordered by **descending published_at date**.
 
 
 
 ## Audio ##
-**Endpoint**: `/api/v2/audio/`
+**Endpoint**: `/audio/`
 
 ### Objects ###
 
@@ -1006,31 +1007,31 @@ Representation of Audio in the JSON response.
 #### Audio by ID ####
 Find audio by its ID.
 
-**Endpoint**: `/api/v2/audio/{id}` (GET)  
+**Endpoint**: `/audio/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The ID for the audio.
 
-**Example** GET `/api/v2/audio/999`  
+**Example** GET `/audio/999`  
 **Returns** A single JSON object representation of the requested audio.
 
 
 #### Audio Collection ####
 Find a collection of audio based on several parameters.
 
-**Endpoint**: `/api/v2/audio?{optional params}` (GET)  
+**Endpoint**: `/audio?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of audio objects to return.  
   Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)
 
-**Example** GET `/api/v2/audio?limit=25&page=4`  
+**Example** GET `/audio?limit=25&page=4`  
 **Returns** A JSON array of audio objects, ordered by **descending uploaded_at date**.
 
 
 
 
 ## Alerts ##
-**Endpoint**: `/api/v2/alerts/`
+**Endpoint**: `/alerts/`
 
 ### Objects ###
 
@@ -1091,25 +1092,25 @@ Representation of an Alert in the JSON response.
 #### Alert by ID ####
 Find an alert by its ID.
 
-**Endpoint**: `/api/v2/alerts/{id}` (GET)  
+**Endpoint**: `/alerts/{id}` (GET)  
 **Params**: 
 * `id` - (Integer) The ID for the alert.
 
-**Example** GET `/api/v2/alerts/999`  
+**Example** GET `/alerts/999`  
 **Returns** A single JSON object representation of the requested alert.
 
 
 #### Alert Collection ####
 Find all published Alerts.
 
-**Endpoint**: `/api/v2/alerts?{optional params}` (GET)  
+**Endpoint**: `/alerts?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of alert objects to return.  
   Maximum is 10. (default: 5)
 * `page` - (Integer) The page of results to return. (default: 1)
 * `type` - (String) Filter by the type of alert. See the `type` attribute for options. (default: none, i.e. no filtering)
 
-**Example** GET `/api/v2/alerts?limit=25&page=4&type=audio`  
+**Example** GET `/alerts?limit=25&page=4&type=audio`  
 **Returns** A JSON array of alert objects, ordered by **descending created_at date**.
 
 

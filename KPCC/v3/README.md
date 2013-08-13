@@ -600,7 +600,7 @@ Representation of an Episode in the JSON response.
   </tr>
 
   <tr>
-    <td><strong>teaser</strong></td>
+    <td><strong>summary</strong></td>
     <td>(Text) A short teaser/description.</td>
   </tr>
 

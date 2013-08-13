@@ -604,7 +604,7 @@ Representation of an Episode in the JSON response.
   </tr>
 
   <tr>
-    <td><strong>teaser</strong></td>
+    <td><strong>summary</strong></td>
     <td>(Text) A short teaser/description.</td>
   </tr>
 
@@ -642,6 +642,11 @@ Representation of an Episode in the JSON response.
     <td><strong>segments</strong></td>
     <td>(Array) The segments for this episode, represented as Articles. See <a href="#article-object-description">Article Object Description</a> for details.
     </td>
+  </tr>
+
+  <tr>
+    <td><strong>teaser</strong></td>
+    <td>(Text) <strong>DEPRECATED</strong>: Use <em>summary</em>.</td>
   </tr>
 </table>
 

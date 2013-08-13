@@ -1,6 +1,6 @@
 ## v2 Changelog
 
-### 2.10.0 (unreleased)
+### 2.10.0 (2013-08-13)
 #### Additions
 * Added Alerts.
 

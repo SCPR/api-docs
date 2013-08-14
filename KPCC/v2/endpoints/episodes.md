@@ -49,7 +49,8 @@ Representation of an Episode in the JSON response.
 
   <tr>
     <td><strong>segments</strong></td>
-    <td>(Array of Article Objects) The segments for this episode, represented as Articles. See Article Object Description for details.
+    <td>
+      (Array of Article Objects) The segments for this episode, represented as Articles. See Article Object Description for details.
     </td>
   </tr>
 

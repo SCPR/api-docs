@@ -1,7 +1,12 @@
 ## v2 Changelog
 
-### 2.10.1 (2013-08-13)
+### 2.10.2 (2013-08-13)
 #### Fixes
+* Ordered ExternalProgram's episodes by descending `air_date`, as specified in the documentation.
+
+
+### 2.10.1 (2013-08-13)
+#### Changes
 * Added an actual published_at property to Alerts, for sorting. Alerts are now sorted by this attribute.
 
 

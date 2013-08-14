@@ -39,12 +39,12 @@ Representation of Audio in the JSON response.
 
   <tr>
     <td><strong>duration</strong></td>
-    <td>(Integer) The duration of this audio in <strong>seconds</strong>.</td>
+    <td>(Integer) The duration of this audio in <strong>seconds</strong>. <strong>This may be NULL</strong>, if the duration is unknown.</td>
   </tr>
 
   <tr>
     <td><strong>filesize</strong></td>
-    <td>(Integer) The filesize of the audio file in <strong>bytes</strong>.</td>
+    <td>(Integer) The filesize of the audio file in <strong>bytes</strong>. <strong>This may be NULL</strong>, if the size is unknown.</td>
   </tr>
 
   <tr>

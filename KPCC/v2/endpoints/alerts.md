@@ -31,7 +31,7 @@ Representation of an Alert in the JSON response.
 
   <tr>
     <td><strong>published_at</strong></td>
-    <td>(DateTime) The timestamp for when this alert was created. (This will eventually change to when it was actually fired).</td>
+    <td>(DateTime) The timestamp for when this alert was published.</td>
   </tr>
 
   <tr>
@@ -69,7 +69,7 @@ Find an alert by its ID.
 
 
 #### Alert Collection ####
-Find all published Alerts.
+Get published Alerts.
 
 **Endpoint**: `/alerts?{optional params}` (GET)  
 **Params**: (All parameters are optional)
@@ -79,4 +79,4 @@ Find all published Alerts.
 * `type` - (String) Filter by the type of alert. See the `type` attribute for options. (default: none, i.e. no filtering)
 
 **Example** GET `/alerts?limit=25&page=4&type=audio`  
-**Returns** A JSON array of alert objects, ordered by **descending created_at date**.
+**Returns** A JSON array of alert objects, ordered by **descending published_at date**.

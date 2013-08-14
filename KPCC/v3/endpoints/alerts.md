@@ -31,7 +31,7 @@ Representation of an Alert in the JSON response.
 
   <tr>
     <td><strong>published_at</strong></td>
-    <td>(DateTime) The timestamp for when this alert was created. (This will eventually change to when it was actually fired).</td>
+    <td>(DateTime) The timestamp for when this alert was published.</td>
   </tr>
 
   <tr>

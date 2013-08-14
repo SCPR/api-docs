@@ -1,5 +1,10 @@
 ## v2 Changelog
 
+### 2.10.1 (2013-08-13)
+#### Fixes
+* Added an actual published_at property to Alerts, for sorting. Alerts are now sorted by this attribute.
+
+
 ### 2.10.0 (2013-08-13)
 #### Additions
 * Added Alerts.

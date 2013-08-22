@@ -1,5 +1,10 @@
 ## v2 Changelog
 
+### 2.11.0 (2013-08-22)
+#### Changes
+* Split Content Shells and News Stories apart in the articles endpoint. Content Shells can now be requested by adding `shells` to the `type` parameter for Articles.
+
+
 ### 2.10.3 (2013-08-22)
 #### Fixes
 * Fixed the episodes endpoint for KPCC Programs which use Segments as Episodes. If a program doesn't use episodes, an episode wrapper will be created for each segment.

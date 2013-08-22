@@ -11,7 +11,7 @@ Note that NewsStory and ContentShell are lumped together.
     <th>ID prefix</th>
   </tr>
   <tr>
-    <td>NewsStory + ContentShell</td>
+    <td>NewsStory</td>
     <td>news</td>
     <td>news/story</td>
   </tr>
@@ -24,6 +24,11 @@ Note that NewsStory and ContentShell are lumped together.
     <td>ShowSegment</td>
     <td>segments</td>
     <td>shows/segment</td>
+  </tr>
+  <tr>
+    <td>ContentShell (short teasers for external content)</td>
+    <td>shells</td>
+    <td>content/shell</td>
   </tr>
 </table>
 
@@ -189,8 +194,8 @@ Find a collection of articles based on several parameters.
 * `query` - (String) A search query.  
   Example: `?query=Obama+Healthcare`
 * `types` - (comma-separated list) The types of articles to return.  
-  Example: `?types=news,blogs,segments`  
-  See the [Supported Classes](#supported-classes) table for the options. (default: all types)
+  Example: `?types=news,blogs,segments,shells`  
+  See the [Supported Classes](#supported-classes) table for the options. (default: news,blogs,segments)
 * `categories` - (comma-separated list) The slugs of the categories
   by which you want to filter.  
   Example: `?categories=film,music`  
@@ -200,7 +205,7 @@ Find a collection of articles based on several parameters.
 * `page` - (Integer) The page of results to return. (default: 1)
 
 **Example**  
-GET `/articles?query=Obama&types=news,blogs,segments&limit=25&page=4`  
+GET `/articles?query=Obama&types=news,blogs&limit=25&page=4`  
 **Returns** A JSON array of article objects, ordered by **descending published_at date**.
 
 #### Most Viewed ####

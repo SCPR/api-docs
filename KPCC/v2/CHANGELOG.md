@@ -1,5 +1,11 @@
 ## v2 Changelog
 
+### 2.10.3 (2013-08-22)
+#### Fixes
+* Fixed the episodes endpoint for KPCC Programs which use Segments as Episodes. If a program doesn't use episodes, an episode wrapper will be created for each segment.
+* Added in missing byline to Content Shell.
+
+
 ### 2.10.2 (2013-08-13)
 #### Fixes
 * Ordered ExternalProgram's episodes by descending `air_date`, as specified in the documentation.

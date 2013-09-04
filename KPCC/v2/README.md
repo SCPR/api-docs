@@ -24,6 +24,7 @@
 * [Categories](endpoints/categories.md#categories)
 * [Episodes](endpoints/episodes.md#episodes)
 * [Programs](endpoints/programs.md#programs)
+* [Buckets](endpoints/buckets.md#buckets)
 * [Blogs](endpoints/blogs.md#blogs)
 * [Editions](endpoints/editions.md#editions)
 * [Audio](endpoints/audio.md#audio)

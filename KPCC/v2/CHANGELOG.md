@@ -1,5 +1,10 @@
 ## v2 Changelog
 
+### 2.11.1 (unreleased)
+#### Additions
+* Added Buckets endpoint.
+
+
 ### 2.11.0 (2013-08-22)
 #### Changes
 * Split Content Shells and News Stories apart in the articles endpoint. Content Shells can now be requested by adding `shells` to the `type` parameter for Articles.

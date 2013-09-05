@@ -14,9 +14,24 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 3.0.0.beta  
 **Root Endpoint**: `/api/v3`  
 **Response**: JSON only
+
+
+
+## Payload ##
+Every payload consists of the following nodes:
+* `version` - the API version, for reference.
+* An object containing the single requested object, or an array of objects.
+For example, if you requested `/articles/most_viewed`, the response will look
+something like:
+
+```json
+  {
+    "version": "3.0.0",
+    "articles": [ ... ]
+  }
+```
 
 
 

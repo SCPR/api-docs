@@ -103,6 +103,13 @@ Representation of an Event in the JSON response.
      (Array of Audio Objects) This events's Audio. See Audio Object Description for details.
    </td>
  </tr>
+
+   <tr>
+    <td><strong>embeds</strong></td>
+    <td>
+      (Array of Embed Objects) This event's Embeds. See Embed Object Description (in the Article documentation) for details.
+    </td>
+  </tr>
 </table>
 
 #### Location Object Description ####

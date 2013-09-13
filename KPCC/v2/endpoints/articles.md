@@ -110,6 +110,13 @@ This is how every article is represented by the API in its response.
   </tr>
 
   <tr>
+    <td><strong>embeds</strong></td>
+    <td>
+      (Array of Embed Objects) This article's Embeds. See Embed Object Description for details.
+    </td>
+  </tr>
+
+  <tr>
     <td><strong>attributions</strong></td>
     <td>
       (Array of Attribution Objects) Attributions (i.e., Bylines). See Attribution Object Description for details.
@@ -162,6 +169,21 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
     </ul>
   </td></tr>
 </table>
+
+#### Embed Object Description ####
+
+<table>
+  <tr>
+    <td><strong>title</strong></td>
+    <td>(String) Title</td>
+  </tr>
+
+  <tr>
+    <td><strong>url</strong></td>
+    <td>(String) Embed source URL</td>
+  </tr>
+</table>
+
 
 ### Endpoints ###
 

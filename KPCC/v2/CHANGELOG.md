@@ -1,6 +1,11 @@
 ## v2 Changelog
 
-### 2.11.1 (unreleased)
+### 2.11.2 (unreleased)
+#### Additions
+* Added Embeds to Article and Event objects.
+
+
+### 2.11.1 (2013-09-01)
 #### Additions
 * Added Buckets endpoint.
 

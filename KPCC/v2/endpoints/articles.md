@@ -13,22 +13,22 @@ Note that NewsStory and ContentShell are lumped together.
   <tr>
     <td>NewsStory</td>
     <td>news</td>
-    <td>news/story</td>
+    <td>news_story</td>
   </tr>
   <tr>
     <td>BlogEntry</td>
     <td>blogs</td>
-    <td>blogs/entry</td>
+    <td>blog_entry</td>
   </tr>
   <tr>
     <td>ShowSegment</td>
     <td>segments</td>
-    <td>shows/segment</td>
+    <td>show_segment</td>
   </tr>
   <tr>
     <td>ContentShell (short teasers for external content)</td>
     <td>shells</td>
-    <td>content/shell</td>
+    <td>content_shell</td>
   </tr>
 </table>
 
@@ -40,7 +40,7 @@ This is how every article is represented by the API in its response.
 <table>
   <tr>
     <td><strong>id</strong></td>
-    <td>(String) The object key (i.e. UUID, such as blogs/entry:999).</td>
+    <td>(String) The object key (i.e. UUID, such as blog_entry-999).</td>
   </tr>
 
   <tr>
@@ -199,13 +199,13 @@ GET `/articles/by_url?url=http://www.scpr.org/blogs/politics/2013/04/16/13317/ob
 **Returns** A single JSON object representation of the requested article.
 
 #### Article by ID (obj_key) ####
-Find an article by its obj_key (`blogs/entry:999`)
+Find an article by its obj_key (`blog_entry-999`)
 
 **Endpoint** `/articles/{obj_key}` (GET)  
 **Params**:  
 * `obj_key` - (String) The object key (API id) for the article.
 
-**Example** GET `/articles/blogs/entry:999`  
+**Example** GET `/articles/blog_entry-999`  
 **Returns** A single JSON object representation of the requested article.
 
 #### Articles Collection ####

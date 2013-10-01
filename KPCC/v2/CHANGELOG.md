@@ -1,8 +1,8 @@
 ## v2 Changelog
 
 ### 2.11.2 (unreleased)
-#### Additions
-* Added Embeds to Article and Event objects.
+#### Changes
+* Bumped version to break cache.
 
 
 ### 2.11.1 (2013-09-01)

@@ -1,8 +1,8 @@
 ## v2 Changelog
 
-### 2.11.2 (unreleased)
+### 2.11.2 (2013-10-01)
 #### Changes
-* Bumped version to break cache.
+* Increased editions maximum-per-page to 12.
 
 
 ### 2.11.1 (2013-09-01)

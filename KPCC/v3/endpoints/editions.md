@@ -102,7 +102,7 @@ Find a collection of editions, based on several parameters.
 **Endpoint**: `/editions?{optional params}` (GET)  
 **Params**: (All parameters are optional)
 * `limit` - (Integer) The number of editions to return.  
-  Maximum is 4. (default: 2)
+  Maximum is 12. (default: 2)
 * `page` - (Integer) The page of results to return. (default: 1)
 
 **Example**  

@@ -1,3 +1,8 @@
+### 1.5.1 (2013-10-18)
+### Changes
+* Internal updates
+
+
 ### 1.5.0 (2013-06-12)
 * Deprecated `Post#permalink`. Replaced with `public_url`.
 * Deprecated `Category#permalink`. Replaced with `public_url`.

@@ -191,7 +191,24 @@ Find an article by its obj_key (`blog_entry-999`)
 Find a collection of articles based on several parameters.
 
 **Endpoint**: `/articles?{optional params}` (GET)  
-**Params**: (All parameters are optional)
+**Params**: (All parameters are optional unless otherwise noted)
+* `date`  - (Date) The publish date by which to filter results.
+  This selects everything published between 12am of the requested day,
+  to 11:59:59pm of the same day.  
+  Format is `YYYY-MM-DD`. (default: no filter)  
+  Example: `?date=2013-10-17`
+* `start_date` - (Date) The start of a date range (publish date) by which
+  to filter results.  
+  Without an `end_date` specified, the range will be `start_date` to now.
+  This parameter is required when the `end_date` parameter is present.  
+  This selects everything published between 12am of the requested day,
+  to 11:59:59pm of the `end_date` (or the current day if no `end_date` is
+  specified).  
+  Format is `YYYY-MM-DD`. (default: no filter)  
+  Example: `?start_date=2013-01-01`
+* `end_date` - (Date) The end date of the range explained above.
+  Format is `YYYY-MM-DD`. (default: now)  
+  Example: `?start_date=2013-01-01&end_date=2013-01-31`
 * `query` - (String) A search query.  
   Example: `?query=Obama+Healthcare`
 * `types` - (comma-separated list) The types of articles to return.  

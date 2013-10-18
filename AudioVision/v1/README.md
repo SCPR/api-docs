@@ -10,7 +10,6 @@
     * Object
 * All Date/Time fields are in **ISO 8601** format, unless otherwise noted.
 
-**Current Version**: 1.5.0  
 **Endpoint**: /api/v1/  
 **Response**: JSON only
 

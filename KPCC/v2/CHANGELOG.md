@@ -1,5 +1,10 @@
 ## v2 Changelog
 
+### 2.12.0 (2013-10-17)
+#### Additions
+* Added date filtering on Articles. See Article documentation for more.
+
+
 ### 2.11.2 (2013-10-01)
 #### Changes
 * Increased editions maximum-per-page to 12.

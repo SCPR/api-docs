@@ -1,5 +1,10 @@
 ## v2 Changelog
 
+### 2.12.1 (2013-10-24)
+#### Additions
+* Added an optional `rsvp_url` property to Events.
+
+
 ### 2.12.0 (2013-10-17)
 #### Additions
 * Added date filtering on Articles. See Article documentation for more.

@@ -86,6 +86,11 @@ Representation of an Event in the JSON response.
  </tr>
 
  <tr>
+   <td>rsvp_url</td>
+   <td>(String) A link to the page or website at which users can RSVP for this event.</td>
+ </tr>
+
+ <tr>
    <td>program</td>
    <td>(Program Object) The associated KPCC program for this event. See Program Object Description for more.</td>
  </tr>

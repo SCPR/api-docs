@@ -26,7 +26,7 @@ This is how every post is represented by the API in its response.
 <table>
   <tr>
     <td><strong>id</strong></td>
-    <td>(String) The object key (i.e. UUID, such as posts:999).</td>
+    <td>(String) The object key (i.e. UUID, such as post-999).</td>
   </tr>
 
   <tr>
@@ -195,15 +195,15 @@ GET /api/v1/posts/by_url?url=http://audiovision.scpr.org/127/moon-rise-los-angel
 **Returns**
 A single JSON object representation of the requested post.
 
-#### Post by ID (obj_key) ####
-Find a post by its obj_key (posts:999)
+#### Post by ID ####
+Find a post by its numerical ID.
 
-**Endpoint**: /api/v1/posts/{obj_key} (GET)  
+**Endpoint**: /api/v1/posts/{id} (GET)  
 **Params**: 
-* `obj_key` - (String) The object key (UUID) for the post.
+* `id` - (Integer) The ID for the post.
 
 **Example**
-GET /api/v1/posts/posts:999  
+GET /api/v1/posts/104  
 **Returns**
 A single JSON object representation of the requested post.
 
@@ -302,7 +302,7 @@ Featured collections of posts on the homepage of AudioVision.
 <table>
   <tr>
     <td><strong>id</strong></td>
-    <td>(String) The object key (UUID). <em>billboards:12</em></td>
+    <td>(String) The object key (UUID). <em>billboard-12</em></td>
   </tr>
 
   <tr>

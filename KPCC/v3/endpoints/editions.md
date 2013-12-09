@@ -13,6 +13,11 @@ Representation of an Edition in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>title</strong></td>
+    <td>(String) The title for the edition.</td>
+  </tr>
+
+  <tr>
     <td><strong>published_at</strong></td>
     <td>(DateTime) The date/time on which this Edition was published.</td>
   </tr>

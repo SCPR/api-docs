@@ -1,5 +1,10 @@
 ## v2 Changelog
 
+### 2.12.2
+#### Additions
+* Added Title attribute to Editions.
+
+
 ### 2.12.1 (2013-10-24)
 #### Additions
 * Added an optional `rsvp_url` property to Events.

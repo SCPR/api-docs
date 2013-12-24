@@ -49,7 +49,7 @@ Representation of Audio in the JSON response.
 
   <tr>
     <td><strong>article_obj_key</strong></td>
-    <td>(String) The obj_key (UUID) for this audio's associated article. You can make a separate request to the <a href="#articles">Article API</a> to fetch the object.</td>
+    <td>(String or Null) The obj_key (UUID) for this audio's associated article. You can make a separate request to the <a href="#articles">Article API</a> to fetch the object. <strong>This may be NULL.</strong></td>
   </tr>
 </table>
 

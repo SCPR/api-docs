@@ -2,7 +2,6 @@
 **Endpoint**: `/articles/`
 
 #### Supported Classes ###
-Note that NewsStory and ContentShell are lumped together.
 
 <table>
   <tr>

@@ -1,4 +1,5 @@
 ## Events ##
+**Endpoint**: `/alerts/`
 
 ### Objects ###
 

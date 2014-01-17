@@ -36,83 +36,76 @@ Representation of an Event in the JSON response.
     <td>(Boolean) Whether or not this is an all-day event (no hard start/stop time).</td>
   </tr>
 
- <tr>
-   <td><strong>teaser</strong></td>
-   <td>(Text) Short teaser description for this event.</td>
- </tr>
+  <tr>
+    <td><strong>teaser</strong></td>
+    <td>(Text) Short teaser description for this event.</td>
+  </tr>
 
- <tr>
-   <td><strong>body</strong></td>
-   <td>(Text) The full description for this event.</td>
- </tr>
+  <tr>
+    <td><strong>body</strong></td>
+    <td>(Text) The full description for this event.</td>
+  </tr>
 
- <tr>
-   <td>past_tense_body</td>
-   <td>(Text) A description that describes the event in the past tense. Meant to be used for displaying past events.</td>
- </tr>
+  <tr>
+    <td>past_tense_body</td>
+    <td>(Text) A description that describes the event in the past tense. Meant to be used for displaying past events.</td>
+  </tr>
 
- <tr>
-   <td><strong>hashtag</strong></td>
-   <td>(String) A social media hashtag for this event. Doesn't include the hash mark (#).</td>
- </tr>
+  <tr>
+    <td><strong>hashtag</strong></td>
+    <td>(String) A social media hashtag for this event. Doesn't include the hash mark (#).</td>
+  </tr>
 
- <tr>
-   <td><strong>event_type</strong></td>
-   <td>
-    (String) The type of event. The possible types are:<br />
-    <ul>
-      <li><strong>comm</strong>: Forum: Community Engagement</li>
-      <li><strong>cult</strong>: Forum: Cultural</li>
-      <li><strong>hall</strong>: Forum: Town Hall</li>
-      <li><strong>spon</strong>: Sponsored</li>
-      <li><strong>pick</strong>: Staff Picks</li>
-    </ul>
-   </td>
- </tr>
-
- <tr>
-   <td><strong>is_kpcc_event</strong></td>
-   <td>(Boolean) Whether or not this event is sponsored by or on behalf of KPCC.</td>
- </tr>
-
- <tr>
-   <td><strong>location</strong></td>
-   <td>(Location Object) The location of this event. See Location Object Description for more.</td>
- </tr>
-
- <tr>
-   <td><strong>sponsor</strong></td>
-   <td>(Sponsor Object) The sponsor for this event. See Sponsor Object Description for more.</td>
- </tr>
-
- <tr>
-   <td>rsvp_url</td>
-   <td>(String) A link to the page or website at which users can RSVP for this event.</td>
- </tr>
-
- <tr>
-   <td>program</td>
-   <td>(Program Object) The associated KPCC program for this event. See Program Object Description for more.</td>
- </tr>
-
- <tr>
-   <td><strong>assets</strong></td>
-   <td>
-     (Array of Asset Objects) The events's assets. See Asset Object Description for details.
-   </td>
- </tr>
-
- <tr>
-   <td><strong>audio</strong></td>
-   <td>
-     (Array of Audio Objects) This events's Audio. See Audio Object Description for details.
-   </td>
- </tr>
-
-   <tr>
-    <td><strong>embeds</strong></td>
+  <tr>
+    <td><strong>event_type</strong></td>
     <td>
-      (Array of Embed Objects) This event's Embeds. See Embed Object Description (in the Article documentation) for details.
+     (String) The type of event. The possible types are:<br />
+     <ul>
+       <li><strong>comm</strong>: Forum: Community Engagement</li>
+       <li><strong>cult</strong>: Forum: Cultural</li>
+       <li><strong>hall</strong>: Forum: Town Hall</li>
+       <li><strong>spon</strong>: Sponsored</li>
+       <li><strong>pick</strong>: Staff Picks</li>
+     </ul>
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>is_kpcc_event</strong></td>
+    <td>(Boolean) Whether or not this event is sponsored by or on behalf of KPCC.</td>
+  </tr>
+
+  <tr>
+    <td><strong>location</strong></td>
+    <td>(Location Object) The location of this event. See Location Object Description for more.</td>
+  </tr>
+
+  <tr>
+    <td><strong>sponsor</strong></td>
+    <td>(Sponsor Object) The sponsor for this event. See Sponsor Object Description for more.</td>
+  </tr>
+
+  <tr>
+    <td>rsvp_url</td>
+    <td>(String) A link to the page or website at which users can RSVP for this event.</td>
+  </tr>
+
+  <tr>
+    <td>program</td>
+    <td>(Program Object) The associated KPCC program for this event. See Program Object Description for more.</td>
+  </tr>
+
+  <tr>
+    <td><strong>assets</strong></td>
+    <td>
+      (Array of Asset Objects) The events's assets. See Asset Object Description for details.
+    </td>
+  </tr>
+
+  <tr>
+    <td><strong>audio</strong></td>
+    <td>
+      (Array of Audio Objects) This events's Audio. See Audio Object Description for details.
     </td>
   </tr>
 </table>

@@ -72,7 +72,7 @@ Representation of a Program in the JSON response.
 Find a program by its slug (uuid).
 
 **Endpoint**: `/programs/{slug}` (GET)  
-**Params**: 
+**Params**:
 * `slug` - (String) The slug (uuid).
 
 **Example** GET `/programs/airtalk`  
@@ -82,6 +82,8 @@ Find a program by its slug (uuid).
 Get all programs.
 
 **Endpoint**: `/programs` (GET)  
-**Params**: None  
-**Example** GET `/programs`  
-**Returns** A JSON array of all programs.
+**Params**:
+* `air_status` - (comma-separated list) The air statuses by which to filter the programs. Options are `onair`, `online`, `archive`, `hidden`. See the `air_status` property for the Program object for descriptions of each.
+
+**Example** GET `/programs?air_status=online,onair`  
+**Returns** A JSON array of programs.

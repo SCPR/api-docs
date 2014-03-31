@@ -3,6 +3,7 @@
 ### 3.0.0 (unreleased)
 #### Additions
 * Added a `version` node to **every** response, indicating the API version.
+* Added `air_status` filtering to Program endpoint.
 
 #### Changes
 * **BREAKING** Response objects are now nested under an appropriately-named key.

@@ -72,6 +72,7 @@ Get a collection of Data Points.
 ```
 
 #### `response_format=full`
+```json
 {
   "data_points": [
     // Full Data Point object

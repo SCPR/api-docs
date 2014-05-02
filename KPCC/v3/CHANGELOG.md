@@ -4,6 +4,7 @@
 #### Additions
 * Added a `version` node to **every** response, indicating the API version.
 * Added `air_status` filtering to Program endpoint.
+* Added a Data Points endpoint.
 
 #### Changes
 * **BREAKING** Response objects are now nested under an appropriately-named key.

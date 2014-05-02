@@ -58,8 +58,8 @@ Get a collection of Data Points.
 * `group` - (String) The group by which to filter the results. Default: no filter
 * `response_format` (String) The response format. Options are: `simple, full`. The `full` response returns an array of full Data Point objects (as described above). The `simple` format returns just a key-value representation of the data points. Default: `full`
 
+#### `response_format=simple`
 ```json
-// response_format=simple
 {
   "data_points": {
     "percent_reporting": "10%",
@@ -69,8 +69,9 @@ Get a collection of Data Points.
   }
 }
 
-// response_format=full
+```
 
+#### `response_format=full`
 {
   "data_points": [
     // Full Data Point object

@@ -1,4 +1,4 @@
-## Categories ##
+## Data Points ##
 **Endpoint**: `/data_points/`
 
 ### Objects ###

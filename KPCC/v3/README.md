@@ -47,7 +47,7 @@ something like:
 * [Editions](endpoints/editions.md#editions)
 * [Audio](endpoints/audio.md#audio)
 * [Alerts](endpoints/alerts.md#alerts)
-* [Data Points](endpoints/articles.md#data_points)
+* [Data Points](endpoints/data_points.md#data_points)
 
 
 

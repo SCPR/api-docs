@@ -83,7 +83,7 @@ Get all programs.
 
 **Endpoint**: `/programs` (GET)  
 **Params**:
-* `air_status` - (comma-separated list) The air statuses by which to filter the programs. Options are `onair`, `online`, `archive`, `hidden`. See the `air_status` property for the Program object for descriptions of each.
+* `air_status` - (comma-separated list) The air statuses by which to filter the programs. Options are `onair`, `online`, `archive`, `hidden`. See the `air_status` property for the Program object for descriptions of each. (default: no filter)
 
 **Example** GET `/programs?air_status=online,onair`  
 **Returns** A JSON array of programs.

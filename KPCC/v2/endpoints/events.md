@@ -192,6 +192,9 @@ Here is the behavior of requesting date ranges. Note that the number of returned
 * `only_kpcc_events` - (Boolean) Limit the results to only KPCC-sponsored events. 
   Options are "true" or "false". (default: false)  
   Example: `?only_kpcc_events=true`
+* `limit` - (Integer) The number of events to return.  
+  Maximum is 40. (default: 40)
+* `page` - (Integer) The page of results to return. (default: 1)
 
 **Example**  
 GET `/events?start_date=2013-06-13&end_date=2013-06-14&types=comm`  

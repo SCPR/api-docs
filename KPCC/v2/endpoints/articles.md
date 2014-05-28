@@ -216,7 +216,7 @@ Find a collection of articles based on several parameters.
 * `categories` - (comma-separated list) The slugs of the categories
   by which you want to filter.  
   Example: `?categories=film,music`  
-  See [Categories](#categories) for how to find category slugs.
+  See Categories for how to find category slugs.
 * `limit` - (Integer) The number of articles to return.  
   Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)

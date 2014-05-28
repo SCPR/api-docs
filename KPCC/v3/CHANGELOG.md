@@ -5,6 +5,9 @@
 * Added a `version` node to **every** response, indicating the API version.
 * Added `air_status` filtering to Program endpoint.
 * Added a Data Points endpoint.
+* Added a Tags endpoint
+* Added tags node to Articles.
+* Changed Events default limit to 20 (down from 40)
 
 #### Changes
 * **BREAKING** Response objects are now nested under an appropriately-named key.

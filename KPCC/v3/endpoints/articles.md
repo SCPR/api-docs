@@ -109,6 +109,13 @@ This is how every article is represented by the API in its response.
       (Array of Attribution Objects) Attributions (i.e., Bylines). See Attribution Object Description for details.
     </td>
   </tr>
+
+  <tr>
+    <td><strong>tags</strong></td>
+    <td>
+      (Array of Tag Objects) Tags for this article. See Tag Object Description for details.
+    </td>
+  </tr>
 </table>
 
 #### Attribution Object Description ####
@@ -211,7 +218,10 @@ Find a collection of articles based on several parameters.
 * `categories` - (comma-separated list) The slugs of the categories
   by which you want to filter.  
   Example: `?categories=film,music`  
-  See [Categories](#categories) for how to find category slugs.
+  See Categories for how to find category slugs.
+* `tags` - (comma-separated list) The slugs of the tags by which to filter.  
+  Example: `?tags=elections-2014,immigration`  
+  See Tags for how to find tag slugs.
 * `limit` - (Integer) The number of articles to return.  
   Maximum is 40. (default: 10)
 * `page` - (Integer) The page of results to return. (default: 1)

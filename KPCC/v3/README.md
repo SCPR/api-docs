@@ -58,7 +58,7 @@ something like:
 * [Audio](endpoints/audio.md#audio)
 * [Alerts](endpoints/alerts.md#alerts)
 * [Data Points](endpoints/data_points.md#data_points)
-
+* [Tags](endpoints/tags.md#tags)
 
 
 ## Errors ##

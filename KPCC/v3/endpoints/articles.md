@@ -145,7 +145,10 @@ There are four sizes of assets. These are their names and geometry (see [ImageMa
 * large (730x486>)
 * full (1024x1024>)
 
+**Note**: Even those these object contain unique IDs, they cannot yet be looked up separately.
+
 <table>
+  <tr><td><strong>id</strong></td><td>(Integer) Unique ID for this asset</td></tr>
   <tr><td><strong>title</strong></td><td>(String) Asset title</td></tr>
   <tr><td><strong>caption</strong></td><td>(Text) Asset caption</td></tr>
   <tr><td><strong>owner</strong></td><td>(String) Asset owner</td></tr>

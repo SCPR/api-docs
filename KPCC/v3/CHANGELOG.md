@@ -7,6 +7,7 @@
 * Added a Data Points endpoint.
 * Added a Tags endpoint
 * Added tags node to Articles.
+* Added `id` to Asset objects.
 
 #### Changes
 * **BREAKING** Response objects are now nested under an appropriately-named key.

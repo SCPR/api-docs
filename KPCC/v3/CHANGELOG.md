@@ -7,7 +7,6 @@
 * Added a Data Points endpoint.
 * Added a Tags endpoint
 * Added tags node to Articles.
-* Changed Events default limit to 20 (down from 40)
 
 #### Changes
 * **BREAKING** Response objects are now nested under an appropriately-named key.
@@ -33,6 +32,7 @@
 The objects for a COLLECTION are nested under a pluralized object name as the key.
 For SINGULAR resources, the key will be the SINGULAR version, such as
 `article`.
+* Events now default to 20 per page (down from 40 from v2). This can be increased to 40.
 
 #### Deprecations
 * None

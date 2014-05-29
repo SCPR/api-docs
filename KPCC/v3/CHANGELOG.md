@@ -2,7 +2,7 @@
 
 ### 3.0.0 (unreleased)
 #### Additions
-* Added a `version` node to **every** response, indicating the API version.
+* Added a `meta` node to **every** response, which includes some metadata about the API response.
 * Added `air_status` filtering to Program endpoint.
 * Added a Data Points endpoint.
 * Added a Tags endpoint
@@ -15,14 +15,21 @@
 
 ```
 {
-    version: "3.0.0",
-    articles: [
+    "meta": {
+        "version": "3.0.0",
+        "status": {
+            "code": 200,
+            "message": "OK"
+        }
+    },
+
+    "articles": [
         {
-            id: "blogs/entry:999",
+            "id": "blogs/entry:999",
             ...
         },
         {
-            id: "news/story:123",
+            "id": "news/story:123",
             ...
         }
     ]
@@ -32,7 +39,7 @@
 **version** is the current API version.  
 The objects for a COLLECTION are nested under a pluralized object name as the key.
 For SINGULAR resources, the key will be the SINGULAR version, such as
-`article`.
+`article`. There are some exceptions, depending on pluralization rules (for example, "audio" is the same for plural and singular).
 * Events now default to 20 per page (down from 40 from v2). This can be increased to 40.
 
 #### Deprecations

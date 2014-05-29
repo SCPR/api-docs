@@ -21,14 +21,24 @@
 
 ## Payload ##
 Every payload consists of the following nodes:
-* `version` - the API version, for reference.
+* `meta` - Metadata about the API response:
+  * `version` - (String) The API version
+  * `status`
+    * `code` - (Integer) The HTTP response code (200, 404, 400, etc.)
+    * `message` - (String) The message for the response code ("OK", "Not Found", "Bad Request", etc.)
 * An object containing the single requested object, or an array of objects.
 For example, if you requested `/articles/most_viewed`, the response will look
 something like:
 
 ```json
   {
-    "version": "3.0.0",
+    "meta": {
+      "version": "3.0.0",
+      "status": {
+        "code": 200,
+        "message": "OK"
+      }
+    },
     "articles": [ ... ]
   }
 ```
@@ -56,8 +66,8 @@ These are some errors you might come across when interacting with the API.
 
 <table>
   <tr>
-    <th>Error Name</th>
-    <th>Status</th>
+    <th>Message</th>
+    <th>Code</th>
     <th>Description</th>
   </tr>
   <tr>

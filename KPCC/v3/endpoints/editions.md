@@ -23,6 +23,11 @@ Representation of an Edition in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>updated_at</strong></td>
+    <td>(DateTime) The timestamp of when this edition was last updated.</td>
+  </tr>
+
+  <tr>
     <td><strong>abstracts</strong></td>
     <td>
       (Array of Abstract Objects) An array of this Edition's Abstracts. See Abstract Object Description for details.

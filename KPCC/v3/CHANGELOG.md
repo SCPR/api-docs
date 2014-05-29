@@ -8,6 +8,7 @@
 * Added a Tags endpoint
 * Added tags node to Articles.
 * Added `id` to Asset objects.
+* Added `updated_at` attribute to Articles, Events, and Editions.
 
 #### Changes
 * **BREAKING** Response objects are now nested under an appropriately-named key.

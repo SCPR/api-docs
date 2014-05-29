@@ -63,6 +63,11 @@ This is how every article is represented by the API in its response.
   </tr>
 
   <tr>
+    <td><strong>updated_at</strong></td>
+    <td>(DateTime) The timestamp of when this article was last updated.</td>
+  </tr>
+
+  <tr>
     <td><strong>teaser</strong></td>
     <td>(Text) The teaser.</td>
   </tr>

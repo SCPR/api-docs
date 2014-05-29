@@ -23,6 +23,11 @@ Representation of an Event in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>updated_at</strong></td>
+    <td>(DateTime) The timestamp of when this event was last updated.</td>
+  </tr>
+
+  <tr>
     <td><strong>starts_at</strong></td>
     <td>(DateTime) The start date and time for this event.</td>
   </tr>

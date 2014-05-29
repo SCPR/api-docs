@@ -228,6 +228,7 @@ Find a collection of articles based on several parameters.
   Example: `?categories=film,music`  
   See Categories for how to find category slugs.
 * `tags` - (comma-separated list) The slugs of the tags by which to filter.  
+  Note: The requested tags are checked again existing tags, and thrown out if they don't exist.  
   Example: `?tags=elections-2014,immigration`  
   See Tags for how to find tag slugs.
 * `limit` - (Integer) The number of articles to return.  

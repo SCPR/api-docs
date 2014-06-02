@@ -1,5 +1,9 @@
 ## v2 Changelog
 
+### 2.12.3
+* Cache expiration for Category updates
+
+
 ### 2.12.2
 #### Additions
 * Added Title attribute to Editions.

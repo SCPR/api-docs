@@ -41,6 +41,7 @@
 The objects for a COLLECTION are nested under a pluralized object name as the key.
 For SINGULAR resources, the key will be the SINGULAR version, such as
 `article`. There are some exceptions, depending on pluralization rules (for example, "audio" is the same for plural and singular).
+* **BREAKING** API Errors are now nested under an `error` node, and the response also gets a `meta` node. See the "Errors" section of the README for more explanation.
 * Events now default to 20 per page (down from 40 from v2). This can be increased to 40.
 
 #### Deprecations

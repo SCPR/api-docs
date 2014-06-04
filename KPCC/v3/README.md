@@ -29,16 +29,16 @@ For example, if you requested `/articles/most_viewed`, the response will look
 something like:
 
 ```json
-  {
-    "meta": {
-      "version": "3.0.0",
-      "status": {
-        "code": 200,
-        "message": "OK"
-      }
-    },
-    "articles": [ ... ]
-  }
+{
+  "meta": {
+    "version": "3.0.0",
+    "status": {
+      "code": 200,
+      "message": "OK"
+    }
+  },
+  "articles": [ ... ]
+}
 ```
 
 
@@ -60,6 +60,26 @@ something like:
 
 
 ## Errors ##
+The API may return an error for various reasons. The payload for an error looks like this:
+
+```json
+{
+  "meta": {
+    "version": "3.0.0",
+    "status": {
+      "code": 404,
+      "message": "Not Found"
+    }
+  },
+
+  "error": {
+    "message": "Record Not Found"
+  }
+}
+```
+
+The `meta.status.message` property is the HTTP status message. The `error.message` status is a message for the specific problem. They may be the same.
+
 These are some errors you might come across when interacting with the API.
 
 <table>

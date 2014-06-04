@@ -1,7 +1,5 @@
 # KPCC Public API v3 Documentation
 
-**WARNING** v3 of the API is in BETA and shouldn't be used yet.
-
 ### Notes on this Documentation ###
 * All API URL's will look something like: `GET http://www.scpr.org/api/v3/articles`. Everything up to the actual object endpoint ("articles" in this case) has been snipped for brevity.
 * In Object descriptions, **bold** denotes that a node will *always* be present, even if it's empty. Otherwise, the node will only be present if it isn't empty. There are some noted exceptions.

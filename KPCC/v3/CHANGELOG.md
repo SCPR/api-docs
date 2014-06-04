@@ -1,6 +1,6 @@
 ## v3 Changelog
 
-### 3.0.0 (unreleased)
+### 3.0.0
 #### Additions
 * Added a `meta` node to **every** response, which includes some metadata about the API response.
 * Added `air_status` filtering to Program endpoint.

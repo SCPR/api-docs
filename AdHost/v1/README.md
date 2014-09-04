@@ -86,6 +86,7 @@ Get the active campaigns.
 **Endpoint**: /api/v1/visual_campaigns?{optional params} (GET)  
 **Headers**:  
 * `Origin` - **required**. The server controls where campaigns may be delivered.
+
 **Params**:  
 * `keys` - (String) Optional- A comma-separated list of output keys to filter by. (default: no filter)  
 Example: ?keys=global,article,event
@@ -102,6 +103,7 @@ Get a single active campaign by output key.
 **Endpoint**: /api/v1/visual_campaigns/{key} (GET)  
 **Headers**:  
 * `Origin` - **required**. The server controls where campaigns may be delivered.
+
 **Params**: None
 
 **Example**

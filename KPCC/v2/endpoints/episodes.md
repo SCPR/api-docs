@@ -50,7 +50,7 @@ Representation of an Episode in the JSON response.
   <tr>
     <td><strong>segments</strong></td>
     <td>
-      (Array of Article Objects) The segments for this episode, represented as Articles. See Article Object Description for details.
+      (Array of Article Objects) The segments for this episode, represented as Articles. See Article Object Description for details. For non-segmented programs, this object will have a single segment, which containts the full episode information. This is only available for backwards compatbility. In this scenario, the full epsiode data should be used instead of the single segment.
     </td>
   </tr>
 

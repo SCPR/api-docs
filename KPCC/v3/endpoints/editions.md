@@ -18,6 +18,11 @@ Representation of an Edition in the JSON response.
   </tr>
 
   <tr>
+    <td><strong>edition_type</strong></td>
+    <td>(String) The type of edition (e.g. 'A.M. Edition', 'P.M. Edition', 'Weekend Reads').</td>
+  </tr>
+
+  <tr>
     <td><strong>published_at</strong></td>
     <td>(DateTime) The date/time on which this Edition was published.</td>
   </tr>

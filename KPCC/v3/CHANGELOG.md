@@ -1,5 +1,8 @@
 ## v3 Changelog
 
+### 3.0.1
+* Added Edition Type attribute to Editions.
+
 ### 3.0.0
 #### Additions
 * Added a `meta` node to **every** response, which includes some metadata about the API response.

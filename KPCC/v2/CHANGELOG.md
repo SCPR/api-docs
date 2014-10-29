@@ -1,5 +1,8 @@
 ## v2 Changelog
 
+### 2.12.4
+* Added Edition Type attribute to Editions.
+
 ### 2.12.3
 * Cache expiration for Category updates
 

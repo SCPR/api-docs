@@ -21,7 +21,9 @@ Representation of a Schedule Occurrence in the JSON response.
     <td><strong>starts_at</strong></td>
     <td>(DateTime) The start date/time.</td>
   </tr>
-
+  <tr>
+    <td><strong>soft_starts_at</strong></td>
+    <td>(DateTime) A suggested seek destination to use as the program's start time for seeking. Intended to jump straight into program audio.</td>
   <tr>
     <td><strong>ends_at</strong></td>
     <td>(DateTime) The end date/time.</td>

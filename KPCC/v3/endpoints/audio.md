@@ -9,7 +9,7 @@ Representation of Audio in the JSON response.
 <table>
   <tr>
     <td><strong>id</strong></td>
-    <td>(Integer) The ID of this audio object.</td>
+    <td>(Integer) The ID of this audio object. <strong>This may be NULL</strong> when receiving an audio object through an article. Position can be used as a local ID replacement in that case.</td>
   </tr>
 
   <tr>

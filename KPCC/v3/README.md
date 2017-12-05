@@ -57,6 +57,8 @@ something like:
 * [Alerts](endpoints/alerts.md#alerts)
 * [Data Points](endpoints/data_points.md#data_points)
 * [Tags](endpoints/tags.md#tags)
+* [Lists](endpoints/lists.md#lists)
+* [Settings](endpoints/settings.md#settings)
 
 
 ## Errors ##

@@ -4,7 +4,7 @@
 ### Objects ###
 
 #### Settings Object Description ####
-Representation of Settings in the JSON response.
+Representation of global Settings in the JSON response.
 
 <table>
   <tr>
@@ -14,7 +14,7 @@ Representation of Settings in the JSON response.
 </table>
 
 #### Additional Settings (iOS) ####
-When passed the `ios` context, additional settings iOS-specific will be provided.
+When supplied with the `ios` context, additional iOS-specific Settings may also be returned.
 
 Currently, only an optional `donate` object is returned.
 

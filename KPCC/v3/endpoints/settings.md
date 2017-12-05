@@ -16,11 +16,11 @@ Representation of Settings in the JSON response.
 #### Additional Settings (iOS) ####
 When passed the `ios` context, additional settings iOS-specific will be provided.
 
+Currently, only an optional `donate` object is returned.
+
+##### Donate Settings (iOS) #####
+
 <table>
-  <tr>
-    <td><strong>donate</strong></td>
-    <td>(Object) An object specifying settings associated with in-app donation functionality.</td>
-  </tr>
   <tr>
     <td><strong>prompt_title</strong></td>
     <td>(String) The title used in the header of the in-app donation prompt.</td>
@@ -55,7 +55,8 @@ When passed the `ios` context, additional settings iOS-specific will be provided
   </tr>
 </table>
 
-##### Button-Specific Settings #####
+##### Donate Button-Specific Settings (iOS) #####
+An array of these objects may be returned in the `prompt_buttons` array, described above.
 
 <table>
   <tr>
@@ -80,6 +81,14 @@ When passed the `ios` context, additional settings iOS-specific will be provided
 
 ### Endpoints ###
 
+#### Global settings ####
+Get global settings.
+
+**Endpoint**: `/settings` (GET)  
+**Params**: None  
+**Example** GET `/settings`  
+**Returns** A single JSON object representation of global settings.
+
 #### Global settings, including settings matching Context (String) ####
 Get global settings, as well as those associated with a given context (String).
 
@@ -89,11 +98,3 @@ Get global settings, as well as those associated with a given context (String).
 
 **Example** GET `/settings/ios`  
 **Returns** A single JSON object representation of general settings, as well as those associated with the `ios` context.
-
-#### Global settings ####
-Get global settings.
-
-**Endpoint**: `/settings` (GET)  
-**Params**: None  
-**Example** GET `/settings`  
-**Returns** A single JSON object representation of general settings.

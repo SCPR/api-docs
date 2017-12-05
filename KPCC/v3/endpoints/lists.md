@@ -24,22 +24,22 @@ Representation of a List in the JSON response.
 
   <tr>
     <td><strong>starts_at</strong></td>
-    <td>(Date) The date that the List will becomes active.</td>
+    <td>(DateTime) The date that the List will becomes active.</td>
   </tr>
 
   <tr>
     <td><strong>ends_at</strong></td>
-    <td>(Date) The date that the List will is no longer active.</td>
+    <td>(DateTime) The date that the List will is no longer active.</td>
   </tr>
 
   <tr>
     <td><strong>created_at</strong></td>
-    <td>(Date) The date that the List was created.</td>
+    <td>(DateTime) The date that the List was created.</td>
   </tr>
 
   <tr>
     <td><strong>updated_at</strong></td>
-    <td>(Date) The date that the List was last updated.</td>
+    <td>(DateTime) The date that the List was last updated.</td>
   </tr>
 
   <tr>
@@ -50,8 +50,16 @@ Representation of a List in the JSON response.
 
 ### Endpoints ###
 
-#### List by Context (String) ####
-Find a list by context (String).
+#### List Collection ####
+Get all currently active lists.
+
+**Endpoint**: `/lists` (GET)  
+**Params**: None  
+**Example** GET `/lists`  
+**Returns** A JSON array of all currently active lists.  
+
+#### Lists by Context (String) ####
+Find all lists with a given context (String).
 
 **Endpoint**: `/lists/{context}` (GET)  
 **Params**: 
@@ -60,10 +68,3 @@ Find a list by context (String).
 **Example** GET `/lists/iphone`  
 **Returns** An array of JSON objects representing all active lists associated with the `iphone` context.
 
-#### List Collection ####
-Get all currently active lists.
-
-**Endpoint**: `/lists` (GET)  
-**Params**: None  
-**Example** GET `/lists`  
-**Returns** A JSON array of all currently active lists.  

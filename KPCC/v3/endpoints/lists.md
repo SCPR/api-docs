@@ -61,10 +61,10 @@ Get all currently active lists.
 #### Lists by Context (String) ####
 Find all lists with a given context (String).
 
-**Endpoint**: `/lists/{context}` (GET)  
+**Endpoint**: `/lists` (GET)  
 **Params**: 
 * `context` - (String) The context.
 
-**Example** GET `/lists/iphone`  
-**Returns** An array of JSON objects representing all active lists associated with the `iphone` context.
+**Example** GET `/lists/?context=ios`  
+**Returns** An array of JSON objects representing all active lists associated with the `ios` context.
 
